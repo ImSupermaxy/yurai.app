@@ -4,8 +4,26 @@
     "strict": true,
     "paths": {
       "@/*": [
-        "./*"
-      ]
+        "./app/*"
+      ],
+      "@/screns/*": [
+        "./app/screens/*"
+      ],
+      "@/constants": [
+        "./app/constants/*"
+      ],
+      "@/common/*": [
+        "./app/components/common/*"
+      ],
+      "@/forms/*": [
+        "./app/components/forms/*"
+      ],
+      "@/specific/*": [
+        "./app/components/specific/*"
+      ],
+      "@/navigators/*": [
+        "./app/navigation/*"
+      ],
     }
   },
   "include": [

@@ -1,35 +1,30 @@
-import { Tabs } from 'expo-router';
+import { ThemeColors } from '@/constants/theme';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
+import { GetRoutes } from './routes';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+const Tab = createBottomTabNavigator();
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const theme = ThemeColors.default;
+  const routes = GetRoutes();
 
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
+        tabBarActiveTintColor: theme.tabIconSelected,
+        tabBarInactiveTintColor: theme.tabIconDefault,
+        tabBarIcon: ({ color, size }) => {
+          const maped = routes.filter(r => r.routerName === route.name).at(0);
+          return <MaterialCommunityIcons name={maped?.routerIcon} size={size} color={color} />;
+        },
+      })}
+    >
+    
+      { routes.map((route) => ( <Tab.Screen name={route.routerName} component={route.component!} /> ))}
+    
+    </Tab.Navigator>
   );
 }

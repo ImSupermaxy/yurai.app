@@ -4,11 +4,13 @@
  */
 
 import { Platform } from 'react-native';
+import { colors } from './colors';
 
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
+const tintColorDefault = colors.blue[500];
 
-export const Colors = {
+export const ThemeColors = {
   light: {
     text: '#11181C',
     background: '#fff',
@@ -25,6 +27,14 @@ export const Colors = {
     tabIconDefault: '#9BA1A6',
     tabIconSelected: tintColorDark,
   },
+  default: {
+    text: colors.gray[200],
+    background: 'red',
+    tint: tintColorDark,
+    icon: colors.green[700],
+    tabIconDefault: colors.gray[200],
+    tabIconSelected: tintColorDefault,
+  }
 };
 
 export const Fonts = Platform.select({
