@@ -1,6 +1,7 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "jsx": "react",
     "strict": true,
     "paths": {
       "@/*": [
@@ -24,6 +25,7 @@
       "@/navigators/*": [
         "./app/navigation/*"
       ],
+      "*": ["./node_modules/*"],
     }
   },
   "include": [
