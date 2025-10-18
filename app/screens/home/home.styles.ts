@@ -5,6 +5,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
+    color: 'white',
+    padding: 12
   },
   stepContainer: {
     gap: 8,

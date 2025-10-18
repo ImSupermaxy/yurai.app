@@ -17,26 +17,26 @@ const appRoutes: AppRoutesMenuModel[] = [
         routerName: "Início",
         routerIcon: "home"
     },
-    // {
-    //     component: HomeScreen,
-    //     routerName: "HomePage",
-    //     routerIcon: "home"
-    // },
     {
         component: defaultScreen,
-        routerName: "Salvos / Favoritos??",
+        routerName: "Buscar",
+        routerIcon: "card-search-outline"
+    },
+    {
+        component: defaultScreen,
+        routerName: "Nova Review",
+        routerIcon: "plus-circle-outline"
+    },
+    {
+        component: defaultScreen,
+        routerName: "Salvos",
         routerIcon: "bookmark-outline"
     },
     {
         component: defaultScreen,
-        routerName: "account-menu",
+        routerName: "Conta",
         routerIcon: "account-circle"
     },
-    // {
-    //     component: defaultScreen,
-    //     routerName: "config",
-    //     routerIcon: "settings-helper"
-    // },
 ];
 
 export function GetRoutes(): AppRoutesMenuModel[] {
