@@ -6,9 +6,9 @@ Nosso aplicativo tem como principal funcionalidade ser um app de avaliação de 
 
 ## Developed by
 
-- Matheus Morais @ImSupermaxy
-- Lucas Antônio Dias @eepymistdev
-- Guilherme Machado @glrm079
+- Matheus Morais - [@ImSupermaxy](https://github.com/ImSupermaxy)
+- Lucas Antônio Dias - [@eepymistdev](https://github.com/eepymistdev)
+- Guilherme Machado - [@glrm079](https://github.com/glrm079)
 
 ## Get started
 
