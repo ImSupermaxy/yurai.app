@@ -17,6 +17,7 @@ export default function TabLayout() {
         tabBarShowLabel: true,
         tabBarActiveTintColor: theme.tabIconSelected,
         tabBarInactiveTintColor: theme.tabIconDefault,
+        // tabBarStyle: styles.container,
         tabBarIcon: ({ color, size }) => {
           const maped = routes.filter(r => r.routerName === route.name).at(0);
           return <MaterialCommunityIcons name={maped?.routerIcon} size={size} color={color} />;

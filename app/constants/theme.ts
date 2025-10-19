@@ -28,11 +28,11 @@ export const ThemeColors = {
     tabIconSelected: tintColorDark,
   },
   default: {
-    text: colors.gray[200],
+    text: colors.gray[100],
     background: 'red',
     tint: tintColorDark,
-    icon: colors.green[700],
-    tabIconDefault: colors.gray[200],
+    icon: colors.global.selecionado,
+    tabIconDefault: colors.gray[100],
     tabIconSelected: tintColorDefault,
   }
 };
