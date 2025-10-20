@@ -24,8 +24,10 @@ export const colors = {
     900: "#3C0908"
   },
   global: { 
-    selecionado: "#132440",
+    selecionado: "#31589D",
     text: "#DCDCDC",
-    specialText: "#398AC3"
+    icon: "#DCDCDC",
+    specialText: "#398AC3",
+    backgroundColor: "#000B22"
   }
 };

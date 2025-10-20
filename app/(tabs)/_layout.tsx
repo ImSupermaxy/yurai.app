@@ -17,6 +17,7 @@ export default function TabLayout() {
         tabBarShowLabel: true,
         tabBarActiveTintColor: theme.tabIconSelected,
         tabBarInactiveTintColor: theme.tabIconDefault,
+        tabBarStyle: { backgroundColor: theme.background },
         // tabBarStyle: styles.container,
         tabBarIcon: ({ color, size }) => {
           const maped = routes.filter(r => r.routerName === route.name).at(0);

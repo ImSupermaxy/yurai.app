@@ -28,12 +28,12 @@ export const ThemeColors = {
     tabIconSelected: tintColorDark,
   },
   default: {
-    text: colors.gray[100],
-    background: 'red',
+    text: colors.global.text,
+    background: colors.global.backgroundColor,
     tint: tintColorDark,
-    icon: colors.global.selecionado,
-    tabIconDefault: colors.gray[100],
-    tabIconSelected: tintColorDefault,
+    icon: colors.global.icon,
+    tabIconDefault: colors.global.icon,
+    tabIconSelected: colors.global.selecionado,
   }
 };
 

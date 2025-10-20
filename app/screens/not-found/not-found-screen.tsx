@@ -7,7 +7,7 @@ export function NotFoundScreen() {
     return (
         <View style={styles.container}>
             <View style={styles.body}>
-                <MaterialCommunityIcons name="robot-off" size={82} color={colors.green[300]}/>
+                <MaterialCommunityIcons name="robot-off" size={82} color={colors.global.icon}/>
                 <Text style={styles.title}>Área não encontrada</Text>
             </View>
             {/* <TouchableOpacity style={styles.buttonBack}> 

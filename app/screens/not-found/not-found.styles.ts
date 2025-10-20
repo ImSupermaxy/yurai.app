@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 28,
         width: '100%',
-        color: colors.gray[700],
+        color: colors.global.text,
     },
     buttonBack: {
         flexDirection: 'row',
@@ -29,10 +29,10 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 20,
-        color: colors.blue[100],
+        color: colors.global.text,
     },
     icon: {
-        color: colors.blue[100]
+        color: colors.global.icon
     }
 });
 
