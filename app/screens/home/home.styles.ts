@@ -20,14 +20,13 @@ export const styles = StyleSheet.create({
     position: 'absolute',
   },
   /* tirar depois */
-      mainContainer: {
-        flex: 1,
-        justifyContent: "center", 
-        alignItems: "center",
-        backgroundColor: "black"
-      },
-      textContainer: {
-        fontSize: 32,
-        color: 'red', 
-      }
+  mainContainer: {
+    flex: 1,
+    justifyContent: "center", 
+    alignItems: "center",
+  },
+  textContainer: {
+    fontSize: 32,
+    color: 'red', 
+  }
 });

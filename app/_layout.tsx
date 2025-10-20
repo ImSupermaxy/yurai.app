@@ -1,4 +1,4 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import { DarkTheme, DefaultTheme, Theme, ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
@@ -7,6 +7,7 @@ import { StyleSheet } from 'react-native';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '../hooks/use-color-scheme';
+import { colors } from './constants/colors';
 
 export const unstable_settings = {
   anchor: '(tabs)',
@@ -19,7 +20,7 @@ export default function RootLayout() {
 
   return (
 
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={colorScheme === 'dark' ? CustomTheme : DefaultTheme}>
       <Stack>
         {/* <LinearGradient
           colors={['#4c669f', '#3b5998', '#192f6a']}
@@ -37,3 +38,17 @@ const styles = StyleSheet.create({
     // backgroundColor: 
   },
 });
+
+
+const CustomTheme: Theme = {
+  ...DarkTheme,
+  dark: false,
+  colors: {
+    primary: 'rgb(0, 122, 255)',
+    background: colors.global.backgroundBackColor,
+    card: 'rgb(255, 255, 255)',
+    text: 'rgb(28, 28, 30)',
+    border: 'rgb(216, 216, 216)',
+    notification: 'rgb(255, 59, 48)',
+  },
+};

@@ -18,7 +18,7 @@ export const colors = {
     700: "#061535",
     900: "#000B22",
   },
-  vermelhor: {
+  vermelho: {
     100: "#BF092F",
     500: "#680907",
     900: "#3C0908"
@@ -28,6 +28,7 @@ export const colors = {
     text: "#DCDCDC",
     icon: "#DCDCDC",
     specialText: "#398AC3",
-    backgroundColor: "#000B22"
+    backgroundColor: "#000B22",
+    backgroundBackColor: "#132440"
   }
 };
