@@ -19,7 +19,6 @@ export default function RootLayout() {
   //Criar um theme default para o projeto (customizado...)
 
   return (
-
     <ThemeProvider value={colorScheme === 'dark' ? CustomTheme : DefaultTheme}>
       <Stack>
         {/* <LinearGradient
@@ -39,13 +38,12 @@ const styles = StyleSheet.create({
   },
 });
 
-
 const CustomTheme: Theme = {
   ...DarkTheme,
   dark: false,
   colors: {
     primary: 'rgb(0, 122, 255)',
-    background: colors.global.backgroundBackColor,
+    background: colors.global.backgroundColor,
     card: 'rgb(255, 255, 255)',
     text: 'rgb(28, 28, 30)',
     border: 'rgb(216, 216, 216)',

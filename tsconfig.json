@@ -18,11 +18,20 @@
       "@/forms/*": [
         "./app/components/forms/*"
       ],
-      "@/specific/*": [
-        "./app/components/specific/*"
+      "@/custom/*": [
+        "./app/components/custom/*"
       ],
       "@/navigators/*": [
         "./app/navigation/*"
+      ],
+      "@/service/*": [
+        "./app/service/*"
+      ],
+      "@/assets/*": [
+        "./assets/*"
+      ],
+      "@/images/*": [
+        "./assets/images/*"
       ],
     }
   },

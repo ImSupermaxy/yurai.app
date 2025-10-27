@@ -30,6 +30,8 @@ export const ThemeColors = {
   default: {
     text: colors.global.text,
     background: colors.global.backgroundColor,
+    backgroundBack: colors.global.backgroundBackColor,
+    backgroundHeaderFooter: colors.global.backgroundHeaderFooterColor,
     tint: tintColorDark,
     icon: colors.global.icon,
     tabIconDefault: colors.global.icon,

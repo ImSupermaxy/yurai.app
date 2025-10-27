@@ -3,11 +3,11 @@ export const colors = {
     100: "#F4F4F5",
     200: "#DCDCDC",
     300: "#A6A6A6",
-    // 400: "#A1A1AA",
+    400: "#848484",
     500: "#5E5E5E",
     // 600: "#52525B",
     700: "#404040",
-    800: "#2D2D2D",
+    800: "#212121",
     900: "#111111ff",
   },
   blue: {
@@ -26,9 +26,12 @@ export const colors = {
   global: { 
     selecionado: "#31589D",
     text: "#DCDCDC",
+    descriptionText: "#848484",
     icon: "#DCDCDC",
     specialText: "#398AC3",
-    backgroundColor: "#000B22",
-    backgroundBackColor: "#132440"
+    subTitle: "#398AC3",
+    backgroundColor: "#061535",
+    backgroundBackColor: "#111F37",
+    backgroundHeaderFooterColor: "#000B22",
   }
 };
