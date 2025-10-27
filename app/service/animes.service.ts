@@ -1,6 +1,6 @@
-import { jsonService } from "@/utils/json.service"
-import { ImageSourcePropType } from "react-native"
-import { ReviewStorageModel } from "./reviews.service"
+import { ImageSourcePropType } from "react-native";
+// Importa o arquivo JSON diretamente
+import animes from '@/assets/data/animes/animes-teste.json';
 
 export interface AnimeStorageModel {
     id: number
@@ -13,7 +13,6 @@ export interface AnimeStorageModel {
     periodoLancamento: "Primavera" | "Outuno" | "Verão" | "Inverno",
     isFavorito: boolean,
     tipoExibicao: "Legendado" | "Dublado"
-    reviews: ReviewStorageModel[]
 }
 
 // imagens.js
@@ -25,13 +24,26 @@ const imagens: {
   banner: require('@/assets/images/banners/banner.png'),
 };
 
+// const ANIMES_FILE_NAME = "animes-teste";
+// async function get(): Promise<AnimeStorageModel[]> {
+//     try {
+//         console.log("service:");
+//         const storage = await jsonService.get<AnimeStorageModel[]>(ANIMES_FILE_NAME, "animes");
+//         console.log(storage);
+//         if (storage === undefined)
+//             return [];
 
-const ANIMES_FILE_NAME = "animes-teste";
+//         return storage;
+//     }
+//     catch (error) {
+//         throw error;
+//     }
+// }
 
-async function get(): Promise<AnimeStorageModel[]> {
+function get(): AnimeStorageModel[] {
     try {
-        const storage = await jsonService.get<AnimeStorageModel[]>(ANIMES_FILE_NAME, "animes");
-        console.log(storage);
+        const storage: AnimeStorageModel[] = animes as AnimeStorageModel[];
+
         if (storage === undefined)
             return [];
 
@@ -41,5 +53,6 @@ async function get(): Promise<AnimeStorageModel[]> {
         throw error;
     }
 }
+
 
 export const animeService = { get, imagens };

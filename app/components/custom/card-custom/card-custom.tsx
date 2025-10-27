@@ -10,7 +10,6 @@ export type CardModel = {
 }
 
 export default function CardCustom({ image, subTitle }: CardModel) {
-    console.log(subTitle);
     return (
         <Card style={styles.container}>
             <Image source={ animeService.imagens["card"] } style={styles.image} />

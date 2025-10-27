@@ -2,20 +2,41 @@ import { colors } from "@/constants/colors";
 import { ThemeColors } from "@/constants/theme";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import React from "react";
-import { Image, Platform, StyleSheet, View } from "react-native";
+import { Image, Platform, StyleSheet, TouchableOpacity } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HeaderCustom({}) {
     return (
-      <View
-        style={[byPlataform, styles.container]}
-      >
-        <Image
-          source={require("@/assets/images/logo.png")}
-          style={{ width: 32, height: 32, resizeMode: 'contain' }}
-        />
-        <MaterialCommunityIcons name="bell-badge-outline" size={24} color={colors.global.icon} />
-      </View>
+      <SafeAreaView edges={['top']}
+        style={[byPlataform, styles.container]}>
+          <TouchableOpacity onPress={openConfigurationModal}>
+            <Image
+              source={require("@/assets/images/logo.png")}
+              style={{ width: 32, height: 32, resizeMode: 'contain' }}
+            />
+          </TouchableOpacity>
+          
+          <TouchableOpacity onPress={openNotificationsModal}>
+            <MaterialCommunityIcons name="bell-badge-outline" size={24} color={colors.global.icon} />
+          </TouchableOpacity>
+      </SafeAreaView>
     );
+}
+
+function openConfigurationModal() {
+  //Abrir o modal para configuração...
+  console.log("Implementar o modal de configuração...");
+  return (
+    <></>
+  );
+}
+
+function openNotificationsModal() {
+  //Abrir o modal para configuração...
+  console.log("Implementar o modal de notificação...");
+  return (
+    <></>
+  );
 }
 
 const theme = ThemeColors.default;
@@ -25,15 +46,14 @@ const styles = StyleSheet.create({
     backgroundColor: theme.backgroundHeaderFooter, 
     borderColor: theme.backgroundHeaderFooter ,
     borderBottomColor: theme.backgroundHeaderFooter,
-    height: 90,
+    // height: 90,
     paddingHorizontal: 24,
-    paddingTop: 32,
-    paddingBottom: 26,
+    paddingTop: 8,
+    paddingBottom: 12,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-  }
-  
+  },
 });
 
 const byPlataform = Platform.select({

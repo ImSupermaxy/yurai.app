@@ -1,4 +1,4 @@
-import { useAsyncStorage } from "@react-native-async-storage/async-storage"
+import reviews from "@/assets/data/reviews/reviews-teste.json"
 
 export type ReviewStorageModel = {
     id: number
@@ -13,46 +13,66 @@ export type ReviewStorageModel = {
     animeId: number
 }
 
-const REVIEWS_STORAGE_KEY = "yurai-app@reviews";
+// const REVIEWS_STORAGE_KEY = "review-teste";
+// async function get(): Promise<ReviewStorageModel[]> {
+//     try {
+//         console.log("service:");
+//         const storage = await jsonService.get<ReviewStorageModel[]>(REVIEWS_STORAGE_KEY, "reviews");
+//         console.log(storage);
+//         if (storage === undefined)
+//             return [];
 
-async function get(): Promise<ReviewStorageModel[]> {
-    const storage = await useAsyncStorage(REVIEWS_STORAGE_KEY).getItem();
+//         return storage;
+//     }
+//     catch (error) {
+//         throw error;
+//     }
+// }
 
-    const response: ReviewStorageModel[] = storage ? JSON.parse(storage) : [];
+// async function getOtherUsers(userName: string): Promise<ReviewStorageModel[]> {
+//     const storage = await get();
 
-    return response;
-}
+//     return storage.filter(review =>
+//         review.nomeUser.toLowerCase() !== userName.toLowerCase()
+//     );
+// }
 
-async function getOtherUsers(userName: string): Promise<ReviewStorageModel[]> {
-    const storage = await useAsyncStorage(REVIEWS_STORAGE_KEY).getItem();
+// async function getUser(userName: string): Promise<ReviewStorageModel[]> {
+//     const storage = await get();
 
-    const response: ReviewStorageModel[] = storage ? JSON.parse(storage) : [];
+//     return storage.filter(review =>
+//         review.nomeUser.toLowerCase() === userName.toLowerCase()
+//     );
+// }
 
-    return response.filter(review =>
-        review.nomeUser.toLowerCase() !== userName.toLowerCase()
-    );
-}
-
-async function getUser(userName: string): Promise<ReviewStorageModel[]> {
-    const storage = await useAsyncStorage(REVIEWS_STORAGE_KEY).getItem();
-
-    const response: ReviewStorageModel[] = storage ? JSON.parse(storage) : [];
-
-    return response.filter(review =>
-        review.nomeUser.toLowerCase() === userName.toLowerCase()
-    );
-}
-
-async function save(link: ReviewStorageModel) {
+function get(): ReviewStorageModel[] {
     try {
-        const storage = await get();
-        const updated = [...storage, link];
+        const storage: ReviewStorageModel[] = reviews as ReviewStorageModel[];
 
-        await useAsyncStorage(REVIEWS_STORAGE_KEY).setItem(JSON.stringify(updated));
+        if (storage === undefined)
+            return [];
+
+        return storage;
     }
     catch (error) {
         throw error;
     }
 }
 
-export const reviewService = { get, getOtherUsers, getUser, save };
+function getOtherUsers(userName: string): ReviewStorageModel[] {
+    const storage = get();
+
+    return storage.filter(review =>
+        review.nomeUser.toLowerCase() !== userName.toLowerCase()
+    );
+}
+
+function getUser(userName: string): ReviewStorageModel[] {
+    const storage = get();
+
+    return storage.filter(review =>
+        review.nomeUser.toLowerCase() === userName.toLowerCase()
+    );
+}
+
+export const reviewService = { get, getOtherUsers, getUser };

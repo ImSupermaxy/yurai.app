@@ -5,11 +5,8 @@ const styles = StyleSheet.create({
         // width: useWindowDimensions().width,
     },
     content: {
-        // width: "100%",
-        display: "flex",
-        flexDirection: "row",
-        flex: 1,
-        rowGap: 12
+        width: "100%",
+        gap: 18
     }
 });
 

@@ -13,7 +13,7 @@ async function get<T>(fileName: string, completePath = "", useDefaultPath = true
         console.log(path);
 
         const response = await fetch(path);
-        console.log(response);
+        // console.log(response);
         const json = await response.json();
         const result: T = JSON.parse(json);
         return result;

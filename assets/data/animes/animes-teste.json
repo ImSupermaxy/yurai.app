@@ -9,45 +9,7 @@
         "review": 4.9,
         "periodoLancamento": "Primavera",
         "isFavorito": false,
-        "tipoExibicao": "Legendado",
-        "reviews": [
-            {
-                "id": 1,
-                "nomeUser":  "Seu usuário",
-                "arrobaUser":  "meuusuario",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": true,
-                "animeId": 1
-            },
-            {
-                "id": 2,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 1
-            },
-            {
-                "id": 3,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 1
-            }
-        ]
+        "tipoExibicao": "Legendado"
     },
     {
         "id": 2,
@@ -59,45 +21,7 @@
         "review": 4.9,
         "periodoLancamento": "Primavera",
         "isFavorito": false,
-        "tipoExibicao": "Legendado",
-        "reviews": [
-            {
-                "id": 4,
-                "nomeUser":  "Seu usuário",
-                "arrobaUser":  "meuusuario",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": true,
-                "animeId": 2
-            },
-            {
-                "id": 5,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 2
-            },
-            {
-                "id": 6,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 2
-            }
-        ]
+        "tipoExibicao": "Legendado"
     },
     {
         "id": 3,
@@ -109,45 +33,7 @@
         "review": 4.9,
         "periodoLancamento": "Primavera",
         "isFavorito": false,
-        "tipoExibicao": "Legendado",
-        "reviews": [
-            {
-                "id": 7,
-                "nomeUser":  "Seu usuário",
-                "arrobaUser":  "meuusuario",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": true,
-                "animeId": 3
-            },
-            {
-                "id": 8,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 3
-            },
-            {
-                "id": 9,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 3
-            }
-        ]
+        "tipoExibicao": "Legendado"
     },
     {
         "id": 4,
@@ -159,45 +45,7 @@
         "review": 4.9,
         "periodoLancamento": "Primavera",
         "isFavorito": false,
-        "tipoExibicao": "Legendado",
-        "reviews": [
-            {
-                "id": 10,
-                "nomeUser":  "Seu usuário",
-                "arrobaUser":  "meuusuario",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": true,
-                "animeId": 4
-            },
-            {
-                "id": 11,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 4
-            },
-            {
-                "id": 12,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 4
-            }
-        ]
+        "tipoExibicao": "Legendado"
     },
     {
         "id": 5,
@@ -209,45 +57,7 @@
         "review": 4.9,
         "periodoLancamento": "Primavera",
         "isFavorito": false,
-        "tipoExibicao": "Legendado",
-        "reviews": [
-            {
-                "id": 13,
-                "nomeUser":  "Seu usuário",
-                "arrobaUser":  "meuusuario",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": true,
-                "animeId": 5
-            },
-            {
-                "id": 14,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 5
-            },
-            {
-                "id": 15,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 5
-            }
-        ]
+        "tipoExibicao": "Legendado"
     },
     {
         "id": 6,
@@ -259,45 +69,7 @@
         "review": 4.9,
         "periodoLancamento": "Primavera",
         "isFavorito": false,
-        "tipoExibicao": "Legendado",
-        "reviews": [
-            {
-                "id": 16,
-                "nomeUser":  "Seu usuário",
-                "arrobaUser":  "meuusuario",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": true,
-                "animeId": 6
-            },
-            {
-                "id": 17,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 6
-            },
-            {
-                "id": 18,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 6
-            }
-        ]
+        "tipoExibicao": "Legendado"
     },
     {
         "id": 7,
@@ -309,45 +81,7 @@
         "review": 4.9,
         "periodoLancamento": "Primavera",
         "isFavorito": false,
-        "tipoExibicao": "Legendado",
-        "reviews": [
-            {
-                "id": 19,
-                "nomeUser":  "Seu usuário",
-                "arrobaUser":  "meuusuario",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": true,
-                "animeId": 7
-            },
-            {
-                "id": 20,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 7
-            },
-            {
-                "id": 21,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 7
-            }
-        ]
+        "tipoExibicao": "Legendado"
     },
     {
         "id": 8,
@@ -359,44 +93,6 @@
         "review": 4.9,
         "periodoLancamento": "Primavera",
         "isFavorito": false,
-        "tipoExibicao": "Legendado",
-        "reviews": [
-            {
-                "id": 22,
-                "nomeUser":  "Seu usuário",
-                "arrobaUser":  "meuusuario",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": true,
-                "animeId": 8
-            },
-            {
-                "id": 23,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 8
-            },
-            {
-                "id": 24,
-                "nomeUser":  "Nome do usuário",
-                "arrobaUser":  "user1234",
-                "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-                "nota": 4.5,
-                "qtdEstrelas": 4.5,
-                "likes": 102000,
-                "disLikes": 900000, 
-                "isUserReview": false,
-                "animeId": 8
-            }
-        ]
+        "tipoExibicao": "Legendado"
     }
 ] 

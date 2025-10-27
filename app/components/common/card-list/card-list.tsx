@@ -1,4 +1,4 @@
-import { FlatList, View } from "react-native";
+import { FlatList } from "react-native";
 
 import { AnimeStorageModel } from "@/service/animes.service";
 import { useState } from "react";
@@ -14,17 +14,16 @@ export default function CardList({ animes }: CardListModel) {
 
     return (
         <FlatList 
-            data={animes} 
+            data={animes}
+            contentContainerStyle={styles.content}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => (
-                <View style={styles.content}>
-                    <CardCustom image={item.cardImage} subTitle={item.name} />
-                </View>
+                <CardCustom image={item.cardImage} subTitle={item.name} />
             )}
             horizontal
             style={styles.container}
             // contentContainerStyle={styles.content}
-            showsHorizontalScrollIndicator={true}
+            showsHorizontalScrollIndicator={false}
         />
     );
 }

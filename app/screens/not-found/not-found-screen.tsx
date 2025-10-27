@@ -19,7 +19,7 @@ export function NotFoundScreen() {
                     data={aFazer} 
                     keyExtractor={(item: any) => item.id.toString()}
                     renderItem={({ item }: any) => (
-                        <Text style={{ color: colors.global.text, paddingBottom: 12}}>- {item.text}</Text>
+                        <Text style={{ color: colors.global.text, paddingBottom: 12}}>{"- " + item.text}</Text>
                     )}
                 />
             </View>

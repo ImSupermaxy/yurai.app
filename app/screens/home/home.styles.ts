@@ -13,6 +13,10 @@ export const styles = StyleSheet.create({
   // },
   vitrines: {
     flexDirection: "column",
-    gap: 16
+    gap: 15
+  },
+  content: {
+    flexDirection: "column",
+    gap: 7
   }
 });

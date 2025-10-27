@@ -6,6 +6,8 @@ import { Platform } from 'react-native';
 
 import HeaderCustom from '@/components/custom/header-custom/header.custom';
 import { ThemeColors } from '@/constants/theme';
+import { SettingsProvider } from '@/context/settings-provider';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GetRoutes } from './routes';
 
 const Tab = createBottomTabNavigator();
@@ -13,33 +15,38 @@ const Tab = createBottomTabNavigator();
 export default function TabLayout() {
   const routes = GetRoutes();
 
-  return (    
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        headerShown: true,
-        tabBarShowLabel: true,
-        tabBarActiveTintColor: theme.tabIconSelected,
-        tabBarInactiveTintColor: theme.tabIconDefault,
-        tabBarStyle: [stylesFooter],
-        tabBarIcon: ({ color, size }) => {
-          const maped = routes.filter(r => r.routerName === route.name).at(0);
-          return <MaterialCommunityIcons name={maped?.routerIcon} size={size} color={color} />;
-        },
-      })}>
+  return (
+    <SafeAreaProvider >
+      <SettingsProvider>
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            headerShown: true,
+            tabBarShowLabel: true,
+            tabBarActiveTintColor: theme.tabIconSelected,
+            tabBarInactiveTintColor: theme.tabIconDefault,
+            tabBarStyle: [stylesFooter],
+            tabBarIcon: ({ color, size }) => {
+              const maped = routes.filter(r => r.routerName === route.name).at(0);
+              return <MaterialCommunityIcons name={maped?.routerIcon} size={size} color={color} />;
+            },
+          })}>
 
-      { 
-        routes.map((route) => ( 
-          <Tab.Screen 
-            name={route.routerName} 
-            component={route.component!}
-            options={{
-              headerShown: true,
-              header: () => ( <HeaderCustom/> )
-            }}
-          /> 
-        ))
-      }
-    </Tab.Navigator>
+          { 
+            routes.map((route) => ( 
+              <Tab.Screen 
+                name={route.routerName} 
+                component={route.component!}
+                options={{
+                  // sceneStyle: styles.container,
+                  headerShown: true,
+                  header: () => ( <HeaderCustom /> )
+                }}
+              /> 
+            ))
+          }
+        </Tab.Navigator>
+      </SettingsProvider>
+    </SafeAreaProvider>
   );
 }
 

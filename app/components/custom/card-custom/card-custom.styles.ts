@@ -1,6 +1,7 @@
 import { colors } from "@/constants/colors";
 import { StyleSheet } from "react-native";
 
+
 const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.blue[900],
@@ -25,8 +26,10 @@ const styles = StyleSheet.create({
         borderRadius: 8
     },
     text: {
-        fontSize: 8,
-        fontWeight: "400",
+        fontSize: 10,
+        fontFamily: 'Roboto_400Regular',
+        fontWeight: "500",
+        paddingHorizontal: 1,
         // height: 12
         textAlign: 'center',
         color: colors.global.text
