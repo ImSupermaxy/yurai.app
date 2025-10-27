@@ -29,13 +29,13 @@ const appRoutes: AppRoutesMenuModel[] = [
     },
     {
         component: defaultScreen,
-        routerName: "Salvos",
-        routerIcon: "bookmark-outline"
+        routerName: "Favoritos",
+        routerIcon: "cards-heart-outline"
     },
     {
         component: defaultScreen,
         routerName: "Conta",
-        routerIcon: "account-circle"
+        routerIcon: "account"
     },
 ];
 

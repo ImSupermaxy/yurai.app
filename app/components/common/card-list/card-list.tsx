@@ -24,7 +24,7 @@ export default function CardList({ animes }: CardListModel) {
             horizontal
             style={styles.container}
             // contentContainerStyle={styles.content}
-            showsHorizontalScrollIndicator={false}
+            showsHorizontalScrollIndicator={true}
         />
     );
 }
