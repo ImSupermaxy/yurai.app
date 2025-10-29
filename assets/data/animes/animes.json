@@ -9,7 +9,8 @@
     "review": 4.9,
     "periodoLancamento": "Primavera",
     "isFavorito": true,
-    "tipoExibicao": "Legendado"
+    "tipoExibicao": "Legendado",
+    "anoLancamento": 2009
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "review": 4.8,
     "periodoLancamento": "Outono",
     "isFavorito": true,
-    "tipoExibicao": "Legendado"
+    "tipoExibicao": "Legendado",
+    "anoLancamento": 2016
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "review": 4.9,
     "periodoLancamento": "Outono",
     "isFavorito": true,
-    "tipoExibicao": "Legendado"
+    "tipoExibicao": "Legendado",
+    "anoLancamento": 2023
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     "review": 4.8,
     "periodoLancamento": "Primavera",
     "isFavorito": false,
-    "tipoExibicao": "Legendado"
+    "tipoExibicao": "Legendado",
+    "anoLancamento": 2014
   },
   {
     "id": 5,
@@ -57,7 +61,8 @@
     "review": 4.6,
     "periodoLancamento": "Inverno",
     "isFavorito": false,
-    "tipoExibicao": "Legendado"
+    "tipoExibicao": "Legendado",
+    "anoLancamento": 2021
   },
   {
     "id": 6,
@@ -69,7 +74,8 @@
     "review": 4.9,
     "periodoLancamento": "Outono",
     "isFavorito": false,
-    "tipoExibicao": "Legendado"
+    "tipoExibicao": "Legendado",
+    "anoLancamento": 2023
   },
   {
     "id": 7,
@@ -81,7 +87,8 @@
     "review": 4.9,
     "periodoLancamento": "Outono",
     "isFavorito": true,
-    "tipoExibicao": "Legendado"
+    "tipoExibicao": "Legendado",
+    "anoLancamento": 2020
   },
   {
     "id": 8,
@@ -93,7 +100,8 @@
     "review": 4.9,
     "periodoLancamento": "Outono",
     "isFavorito": false,
-    "tipoExibicao": "Legendado"
+    "tipoExibicao": "Legendado",
+    "anoLancamento": 2006
   },
   {
     "id": 9,
@@ -105,7 +113,8 @@
     "review": 4.7,
     "periodoLancamento": "Inverno",
     "isFavorito": false,
-    "tipoExibicao": "Legendado"
+    "tipoExibicao": "Legendado",
+    "anoLancamento": 2017
   },
   {
     "id": 10,
@@ -117,7 +126,8 @@
     "review": 4.9,
     "periodoLancamento": "Verão",
     "isFavorito": true,
-    "tipoExibicao": "Legendado"
+    "tipoExibicao": "Legendado",
+    "anoLancamento": 1999
   },
   {
     "id": 11,
@@ -129,7 +139,8 @@
     "review": 4.8,
     "periodoLancamento": "Outono",
     "isFavorito": false,
-    "tipoExibicao": "Legendado"
+    "tipoExibicao": "Legendado",
+    "anoLancamento": 2002
   },
   {
     "id": 12,
@@ -141,7 +152,8 @@
     "review": 4.9,
     "periodoLancamento": "Primavera",
     "isFavorito": false,
-    "tipoExibicao": "Legendado"
+    "tipoExibicao": "Legendado",
+    "anoLancamento": 2013
   },
   {
     "id": 13,
@@ -153,7 +165,8 @@
     "review": 4.8,
     "periodoLancamento": "Verão",
     "isFavorito": false,
-    "tipoExibicao": "Dublado"
+    "tipoExibicao": "Dublado",
+    "anoLancamento": 1989
   },
   {
     "id": 14,
@@ -165,6 +178,7 @@
     "review": 4.8,
     "periodoLancamento": "Outono",
     "isFavorito": false,
-    "tipoExibicao": "Legendado"
+    "tipoExibicao": "Legendado",
+    "anoLancamento": 2004
   }
 ]

@@ -21,9 +21,9 @@ export default function HomeScreen() {
 
   if (animes !== undefined)
   {
-    populares = animes!.filter(a => [1, 2, 5, 4].includes(a.id));
-    novidades = animes!.filter(a => [6, 3, 9, 10, 13, 8].includes(a.id));
-    melhoresAvaliados = animes!.filter(a => [8, 11, 7, 12, 14, 9].includes(a.id));
+    populares = animes!.filter(a => [1, 2, 5, 4].includes(a.id!));
+    novidades = animes!.filter(a => [6, 3, 9, 10, 13, 8].includes(a.id!));
+    melhoresAvaliados = animes!.filter(a => [8, 11, 7, 12, 14, 9].includes(a.id!));
     favoritos = animes!.filter(a => a.isFavorito === true);
   }
   

@@ -12,16 +12,26 @@ type CardListModel = {
 
 export default function CardList({ animes, horizontal = true }: CardListModel) {
     const [animeSelected, setAnimeSelected] = useState({} as AnimeStorageModel);
-    
+
     return (
         <FlatList 
             data={animes}
             // accessibilityShowsLargeContentViewer={true}
             alwaysBounceHorizontal={true}
             contentContainerStyle={{ gap: horizontal ? 18 : 26 }}
-            keyExtractor={(item) => item.id.toString()}
+            keyExtractor={(item) => item.id!.toString()}
             renderItem={({ item }) => (
-                <CardCustom image={item.cardImage} subTitle={item.name} forma={horizontal ? "simples" : "detalhado" } onPress={() => {}} />
+                <CardCustom 
+                    cardImage={item.cardImage} 
+                    periodoLancamento={item.periodoLancamento} 
+                    qtdEstrelas={item.qtdEstrelas} 
+                    name={item.name}
+                    tipoExibicao={item.tipoExibicao}
+                    id={item.id}
+                    forma={horizontal ? "simples" : "detalhado" }
+                    anoLancamento={item.anoLancamento}
+                    onPress={() => {}} 
+                />
             )}
             horizontal={horizontal}
             style={styles.container}

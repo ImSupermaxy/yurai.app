@@ -6,17 +6,18 @@ import animes from '@/assets/data/animes/animes.json';
 export interface AnimeStorageModel {
     id: number
     name: string,
-    descricao: string
+    descricao?: string
     cardImage: "card" | "banner" | "fullmetalAlchemistCard" | "fullmetalBrotherhoodCard" | "onePieceCard" | "chainsawManCard" 
         | "bleachCard" | "blackCloverCard" | "attackOnTitanCard" | "narutoCard" | "blueLockCard" | "deathNoteCard" | "kikiDeliveryServiceCard" | "tokyoRevengersCard"
         | "linkClickCard" | "theSummerHikaruDiedCard" | "theSummerHikaruDiedCard" | "jujutsuKaisenCard" | "myHeroAcademiaCard" | "apothecaryDiariesCard"
         | "frierenBeyondJourneysEndCard" | "danDaDanCard" | "sk8InfinityCard" | "haikyuuCard"
-    bannerImage: string
-    qtdEstrelas: number
-    review: number
-    periodoLancamento: "Primavera" | "Outuno" | "Verão" | "Inverno",
-    isFavorito: boolean,
-    tipoExibicao: "Legendado" | "Dublado"
+    bannerImage?: string
+    qtdEstrelas?: number
+    review?: number
+    periodoLancamento?: "Primavera" | "Outuno" | "Verão" | "Inverno",
+    isFavorito?: boolean,
+    tipoExibicao?: "Legendado" | "Dublado",
+    anoLancamento?: number
 }
 
 // Adicionar aqui o caminho das outras imagens...

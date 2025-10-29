@@ -5,7 +5,7 @@ import { useSettingsState } from "@/context/settings-provider";
 import { AnimeStorageModel } from "@/service/animes.service";
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback, useEffect, useState } from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import screen_styles from "../screen-default.styles";
 import styles from "./search.styles";
 
@@ -44,13 +44,13 @@ export default function SearchScreen() {
           ) ?? []
         );
       } else {
-        setAnimesFiltred(animes?.filter(a => [1, 4, 6].includes(a.id)) ?? []);
+        setAnimesFiltred(animes?.filter(a => [1, 4, 6].includes(a.id!)) ?? []);
       }
+
     }
 
     function onChangeSearch(text: string | undefined | null) {//event: TextInputSubmitEditingEvent
         // const text = event.nativeEvent.text;
-        console.log(text === '');
 
         if (text !== undefined && text !== null && text !== '')
         {
@@ -63,6 +63,7 @@ export default function SearchScreen() {
         setTitle(titleDefault);
     }
 
+    console.log(animesFiltred)
     return (
         <View style={screen_styles.mainContainer}>
             <View style={[styles.conteiner]}>
@@ -70,8 +71,14 @@ export default function SearchScreen() {
 
                 <View style={styles.content}>
                     <TopTitle fontSize={16} title={title} width={300} padding={16} />
-
-                    <CardList animes={animesFiltred} horizontal={false} />
+                    {(animesFiltred.length > 0) ? (
+                        <CardList animes={animesFiltred} horizontal={false} />
+                    ) : (
+                        <View style={styles.notFound}>
+                            <Text style={styles.text}>{"Desculpe, mas não conseguimos encontrar nenhum resultado"}</Text>
+                            <Text style={styles.text}>{":("}</Text>
+                        </View>
+                    )}
                 </View>
             </View>
         </View>

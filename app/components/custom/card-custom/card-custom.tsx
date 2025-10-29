@@ -1,24 +1,24 @@
-import { animeService } from "@/service/animes.service";
+import { animeService, AnimeStorageModel } from "@/service/animes.service";
 import { Image, View } from "react-native";
 import { Card, Text } from 'react-native-paper';
 import { styles } from "./card-custom.styles";
 
 export type CardModel = {
-    // title?: string 
-    image: "card" | "banner" | "fullmetalAlchemistCard" | "fullmetalBrotherhoodCard" | "onePieceCard" | "chainsawManCard" 
-        | "bleachCard" | "blackCloverCard" | "attackOnTitanCard" | "narutoCard" | "blueLockCard" | "deathNoteCard" | "kikiDeliveryServiceCard" | "tokyoRevengersCard"
-        | "linkClickCard" | "theSummerHikaruDiedCard" | "theSummerHikaruDiedCard" | "jujutsuKaisenCard" | "myHeroAcademiaCard" | "apothecaryDiariesCard"
-        | "frierenBeyondJourneysEndCard" | "danDaDanCard" | "sk8InfinityCard" | "haikyuuCard"
-    subTitle?: string,
-    estrelas?: number,
-    // estrelas?: number,...
-    // estrelas?: number,...
-    // estrelas?: number,...
     forma?: "simples" | "detalhado"
     onPress: () => void
 }
 
-export default function CardCustom({ image, subTitle, onPress, forma = "simples" }: CardModel) {
+export default function CardCustom({
+        cardImage: image, 
+        name: subTitle, 
+        onPress, 
+        forma = "simples", 
+        periodoLancamento = "Inverno", 
+        tipoExibicao = "Legendado",
+        qtdEstrelas = 0,
+        anoLancamento = 0
+    }: CardModel & AnimeStorageModel) 
+{
     const isSimple = forma === "simples";
     return (
         <View>
@@ -33,8 +33,16 @@ export default function CardCustom({ image, subTitle, onPress, forma = "simples"
                 <Card style={styles.stylesDetalhado.container} mode="contained">
                     <View style={styles.stylesDetalhado.content}>
                         <Image source={ animeService.imagens[image] } style={styles.stylesDetalhado.image} />
-                    
-                        <Text variant="bodyMedium" style={styles.stylesDetalhado.text}>{ subTitle }</Text>
+                        
+                        <View style={styles.stylesDetalhado.info}>
+                            <Text variant="bodyMedium" style={styles.stylesDetalhado.title}>{ subTitle }</Text>
+                            <View style={{ flexDirection: "row", gap: 4}}>
+                                <Text variant="bodyMedium" style={styles.stylesDetalhado.text}>{ periodoLancamento }</Text>
+                                <Text variant="bodyMedium" style={styles.stylesDetalhado.text}>{ anoLancamento }</Text>
+                            </View>
+                            <Text variant="bodyMedium" style={styles.stylesDetalhado.text}>{ qtdEstrelas }</Text>
+                            <Text variant="bodyMedium" style={styles.stylesDetalhado.text}>{ tipoExibicao }</Text>
+                        </View>
                     </View>
                 </Card>
             )}

@@ -50,17 +50,27 @@ const stylesDetalhado = StyleSheet.create({
         flexDirection: "row",
         gap: 12
     },
+    info: {
+        flexDirection: "column",
+        justifyContent: "space-around"
+    },
     image: {
         height: 146,
         maxWidth: 97,
         borderRadius: 8
     },
     text: {
-        fontSize: 10,
+        fontSize: 14,
         fontFamily: 'Roboto_400Regular',
-        fontWeight: "500",
-        textAlign: 'center',
+        fontWeight: "regular",
         color: colors.global.text,
+    },
+    title: {
+        width: "auto",
+        color: colors.global.text,
+        fontSize: 14,
+        fontFamily: 'Roboto_400Regular',
+        fontWeight: "bold",
     }
 });
 
