@@ -14,18 +14,28 @@ interface HomeTopics {
 
 export default function HomeScreen() {
   const { animes, reviews } = useSettingsState();
+  let populares: AnimeStorageModel[] = []
+  let novidades: AnimeStorageModel[] = [];
+  let melhoresAvaliados: AnimeStorageModel[] = [];
+  let favoritos: AnimeStorageModel[] = [];
 
+  if (animes !== undefined)
+  {
+    populares = animes!.filter(a => [1, 2, 5, 4].includes(a.id));
+    novidades = animes!.filter(a => [6, 3, 9, 10, 13, 8].includes(a.id));
+    melhoresAvaliados = animes!.filter(a => [8, 11, 7, 12, 14, 9].includes(a.id));
+    favoritos = animes!.filter(a => a.isFavorito === true);
+  }
+  
   const listaTopicos: HomeTopics[] = [
-    { animes: animes, topico: "Populares" },
-    { animes: animes, topico: "Novidades" },
-    { animes: animes, topico: "Melhores avaliados" },
-    { animes: animes, topico: "...1" },
-    { animes: animes, topico: "...2" },
-    { animes: animes, topico: "...3" }
+    { animes: populares, topico: "Populares" },
+    { animes: novidades, topico: "Novidades" },
+    { animes: melhoresAvaliados, topico: "Melhores avaliados" },
+    { animes: favoritos, topico: "Favoritos" },
   ];
 
   return (
-    <View style={[styles.mainContainer]}>
+    <View style={[screen_styles.mainContainer]}>
         <View style={[screen_styles.container]} >
           <FlatList
             data={listaTopicos}
@@ -34,7 +44,7 @@ export default function HomeScreen() {
             renderItem={({ item }) => (
               <View style={styles.vitrines}>
                   <TopTitle title={item.topico} />
-                  <CardList animes={animes ?? []} />
+                  <CardList animes={item.animes ?? []} />
               </View>
             )}
             // horizontal

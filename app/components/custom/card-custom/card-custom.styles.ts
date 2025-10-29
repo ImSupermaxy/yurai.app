@@ -1,8 +1,7 @@
 import { colors } from "@/constants/colors";
 import { StyleSheet } from "react-native";
 
-
-const styles = StyleSheet.create({
+const stylesSimples = StyleSheet.create({
     container: {
         backgroundColor: colors.blue[900],
         height: "auto",
@@ -11,6 +10,40 @@ const styles = StyleSheet.create({
         borderRadius: 8,
     },
     content: {
+        paddingTop: 0,
+        paddingBottom: 0,
+        paddingLeft: 0,
+        paddingRight: 0,
+        textAlign: "center",
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    image: {
+        height: 146,
+        width: 97,
+        borderRadius: 8
+    },
+    text: {
+        fontSize: 10,
+        fontFamily: 'Roboto_400Regular',
+        fontWeight: "500",
+        paddingHorizontal: 1,
+        paddingVertical: 1,
+        // height: 12
+        textAlign: 'center',
+        color: colors.global.text
+    }
+});
+
+const stylesDetalhado = StyleSheet.create({
+    container: {
+        height: "auto",
+        maxWidth: 240,
+        width: "auto",
+    },
+    content: {
+        height: "auto",
+        flexGrow: 1,
         paddingTop: 0,
         paddingBottom: 0,
         paddingLeft: 0,
@@ -26,14 +59,12 @@ const styles = StyleSheet.create({
         borderRadius: 8
     },
     text: {
-        fontSize: 10,
+        fontSize: 16,
         fontFamily: 'Roboto_400Regular',
-        fontWeight: "500",
-        paddingHorizontal: 1,
-        // height: 12
         textAlign: 'center',
-        color: colors.global.text
+        color: colors.global.text,
     }
 });
 
-export default styles;
+
+export const styles = { stylesSimples, stylesDetalhado };
