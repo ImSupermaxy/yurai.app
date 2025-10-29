@@ -7,25 +7,28 @@ import styles from "./card-list.styles";
 
 type CardListModel = {
     horizontal?: boolean
-    animes: AnimeStorageModel[]
+    animes: AnimeStorageModel[],
 }
 
 export default function CardList({ animes, horizontal = true }: CardListModel) {
     const [animeSelected, setAnimeSelected] = useState({} as AnimeStorageModel);
+    
     return (
         <FlatList 
             data={animes}
             // accessibilityShowsLargeContentViewer={true}
             alwaysBounceHorizontal={true}
-            contentContainerStyle={styles.content}
+            contentContainerStyle={{ gap: horizontal ? 18 : 26 }}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => (
-                <CardCustom image={item.cardImage} subTitle={item.name} onPress={() => {}} />
+                <CardCustom image={item.cardImage} subTitle={item.name} forma={horizontal ? "simples" : "detalhado" } onPress={() => {}} />
             )}
             horizontal={horizontal}
             style={styles.container}
             // contentContainerStyle={stylekus.content}
             showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={!horizontal}
+            alwaysBounceVertical={!horizontal}
             nestedScrollEnabled
         />
     );

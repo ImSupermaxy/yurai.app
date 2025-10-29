@@ -1,5 +1,6 @@
 import HomeScreen from "@/screens/home/home";
 import { NotFoundScreen } from "@/screens/not-found/not-found-screen";
+import SearchScreen from "@/screens/search/search";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 interface AppRoutesMenuModel {
@@ -18,7 +19,7 @@ const appRoutes: AppRoutesMenuModel[] = [
         routerIcon: "home"
     },
     {
-        component: defaultScreen,
+        component: SearchScreen,
         routerName: "Buscar",
         routerIcon: "card-search-outline"
     },

@@ -24,10 +24,10 @@ const stylesSimples = StyleSheet.create({
         borderRadius: 8
     },
     text: {
-        fontSize: 10,
+        fontSize: 9,
         fontFamily: 'Roboto_400Regular',
         fontWeight: "500",
-        paddingHorizontal: 1,
+        // paddingHorizontal: 1,
         paddingVertical: 1,
         // height: 12
         textAlign: 'center',
@@ -37,30 +37,28 @@ const stylesSimples = StyleSheet.create({
 
 const stylesDetalhado = StyleSheet.create({
     container: {
+        backgroundColor: colors.global.backgroundColor,
         height: "auto",
         maxWidth: 240,
         width: "auto",
+        borderRadius: 0,
+        shadowColor: colors.global.backgroundBackColor,
+        display: "flex",
     },
     content: {
         height: "auto",
-        flexGrow: 1,
-        paddingTop: 0,
-        paddingBottom: 0,
-        paddingLeft: 0,
-        paddingRight: 0,
-        display: "flex",
-        alignContent: "center",
-        alignItems: "center",
-        justifyContent: "center",
+        flexDirection: "row",
+        gap: 12
     },
     image: {
         height: 146,
-        width: 97,
+        maxWidth: 97,
         borderRadius: 8
     },
     text: {
-        fontSize: 16,
+        fontSize: 10,
         fontFamily: 'Roboto_400Regular',
+        fontWeight: "500",
         textAlign: 'center',
         color: colors.global.text,
     }

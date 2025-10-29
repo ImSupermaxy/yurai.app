@@ -7,7 +7,7 @@ import { FlatList, View } from "react-native";
 import screen_styles from "./../screen-default.styles";
 import { styles } from "./home.styles";
 
-interface HomeTopics {
+interface HomeTopicsModel {
   topico: string
   animes?: AnimeStorageModel[]
 }
@@ -27,7 +27,7 @@ export default function HomeScreen() {
     favoritos = animes!.filter(a => a.isFavorito === true);
   }
   
-  const listaTopicos: HomeTopics[] = [
+  const listaTopicos: HomeTopicsModel[] = [
     { animes: populares, topico: "Populares" },
     { animes: novidades, topico: "Novidades" },
     { animes: melhoresAvaliados, topico: "Melhores avaliados" },
@@ -36,24 +36,22 @@ export default function HomeScreen() {
 
   return (
     <View style={[screen_styles.mainContainer]}>
-        <View style={[screen_styles.container]} >
-          <FlatList
-            data={listaTopicos}
-            contentContainerStyle={styles.vitrines}
-            keyExtractor={(item) => item.topico}
-            renderItem={({ item }) => (
-              <View style={styles.vitrines}>
-                  <TopTitle title={item.topico} />
-                  <CardList animes={item.animes ?? []} />
-              </View>
-            )}
-            // horizontal
-            // style={styles.container}
-            // contentContainerStyle={styles.content}
-            showsVerticalScrollIndicator={true}
-            alwaysBounceVertical={true}
-            />
-        </View>
+      <FlatList
+        data={listaTopicos}
+        contentContainerStyle={styles.vitrines}
+        keyExtractor={(item) => item.topico}
+        renderItem={({ item }) => (
+          <View style={styles.vitrines}>
+              <TopTitle title={item.topico} />
+              <CardList animes={item.animes ?? []} />
+          </View>
+        )}
+        // horizontal
+        // style={styles.container}
+        // contentContainerStyle={styles.content}
+        showsVerticalScrollIndicator={true}
+        alwaysBounceVertical={true}
+        />
     </View>
   );
 }
