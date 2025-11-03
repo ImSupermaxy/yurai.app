@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   // carrossel: {
   //   height: 178,
   //   width: "auto"
@@ -14,3 +14,5 @@ export const styles = StyleSheet.create({
     gap: 7
   }
 });
+
+export default styles;

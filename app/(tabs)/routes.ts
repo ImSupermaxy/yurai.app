@@ -1,6 +1,7 @@
-import HomeScreen from "@/screens/home/home";
+import AddScreen from "@/screens/add/add-screen";
+import HomeScreen from "@/screens/home/home-screen";
 import { NotFoundScreen } from "@/screens/not-found/not-found-screen";
-import SearchScreen from "@/screens/search/search";
+import SearchScreen from "@/screens/search/search-screen";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 interface AppRoutesMenuModel {
@@ -24,7 +25,7 @@ const appRoutes: AppRoutesMenuModel[] = [
         routerIcon: "card-search-outline"
     },
     {
-        component: defaultScreen,
+        component: AddScreen,
         routerName: "Nova Review",
         routerIcon: "plus-circle-outline"
     },

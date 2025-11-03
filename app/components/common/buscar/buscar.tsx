@@ -2,19 +2,18 @@ import CardList from "@/components/common/card-list/card-list";
 import TopTitle from "@/components/common/top-title/top-title";
 import { InputCustom } from "@/components/custom/input-custom/input-custom";
 import { useSettingsState } from "@/context/settings-provider";
+import scree_styles from "@/screens/screen-default.styles";
 import { AnimeStorageModel } from "@/service/animes.service";
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback, useEffect, useState } from "react";
 import { Text, View } from "react-native";
-import screen_styles from "../screen-default.styles";
-import styles from "./search.styles";
+import styles from "./buscar.styles";
 
-interface SearchModel {
-  title: string
-  animes: AnimeStorageModel[]
+interface BuscarModel {
+  //...
 }
 
-export default function SearchScreen() {
+export default function Buscar() {
     const titleDefault = "Buscas Recentes";
 
     const [animesFiltred, setAnimesFiltred] = useState<AnimeStorageModel[] | []>([]);
@@ -63,24 +62,23 @@ export default function SearchScreen() {
         setTitle(titleDefault);
     }
 
-    console.log(animesFiltred)
     return (
-        <View style={screen_styles.mainContainer}>
-            <View style={[styles.conteiner]}>
-                <InputCustom placeholder={"Buscar..."} value={search ?? ''} onChangeText={onChangeSearch} />
-
-                <View style={styles.content}>
-                    <TopTitle fontSize={16} title={title} width={300} padding={16} />
-                    {(animesFiltred.length > 0) ? (
-                        <CardList animes={animesFiltred} horizontal={false} />
-                    ) : (
-                        <View style={styles.notFound}>
-                            <Text style={styles.text}>{"Desculpe, mas não conseguimos encontrar nenhum resultado"}</Text>
-                            <Text style={styles.text}>{":("}</Text>
-                        </View>
-                    )}
-                </View>
-            </View>
+        <View style={scree_styles.mainContainer}>
+          <View style={[styles.container]}>
+              <InputCustom placeholder={"Buscar..."} value={search ?? ''} onChangeText={onChangeSearch} />
+              
+              <View style={styles.content}>
+                  <TopTitle fontSize={20} title={title} width={300} padding={16} />
+                  {(animesFiltred.length > 0) ? (
+                      <CardList animes={animesFiltred} forma={"detalhado"} horizontal={false} />
+                  ) : (
+                      <View style={styles.notFound}>
+                          <Text style={styles.text}>{"Desculpe, mas não conseguimos encontrar nenhum resultado"}</Text>
+                          <Text style={styles.text}>{":("}</Text>
+                      </View>
+                  )}
+              </View>
+          </View>
         </View>
     );
 }

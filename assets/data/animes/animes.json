@@ -10,7 +10,8 @@
     "periodoLancamento": "Primavera",
     "isFavorito": true,
     "tipoExibicao": "Legendado",
-    "anoLancamento": 2009
+    "anoLancamento": 2009,
+    "qtdReviews": 820000
   },
   {
     "id": 2,
@@ -23,7 +24,8 @@
     "periodoLancamento": "Outono",
     "isFavorito": true,
     "tipoExibicao": "Legendado",
-    "anoLancamento": 2016
+    "anoLancamento": 2016,
+    "qtdReviews": 672000
   },
   {
     "id": 3,
@@ -36,7 +38,8 @@
     "periodoLancamento": "Outono",
     "isFavorito": true,
     "tipoExibicao": "Legendado",
-    "anoLancamento": 2023
+    "anoLancamento": 2023,
+    "qtdReviews": 394000
   },
   {
     "id": 4,
@@ -49,7 +52,8 @@
     "periodoLancamento": "Primavera",
     "isFavorito": false,
     "tipoExibicao": "Legendado",
-    "anoLancamento": 2014
+    "anoLancamento": 2014,
+    "qtdReviews": 425000
   },
   {
     "id": 5,
@@ -62,7 +66,8 @@
     "periodoLancamento": "Inverno",
     "isFavorito": false,
     "tipoExibicao": "Legendado",
-    "anoLancamento": 2021
+    "anoLancamento": 2021,
+    "qtdReviews": 112200
   },
   {
     "id": 6,
@@ -75,7 +80,8 @@
     "periodoLancamento": "Outono",
     "isFavorito": false,
     "tipoExibicao": "Legendado",
-    "anoLancamento": 2023
+    "anoLancamento": 2023,
+    "qtdReviews": 475200
   },
   {
     "id": 7,
@@ -88,7 +94,8 @@
     "periodoLancamento": "Outono",
     "isFavorito": true,
     "tipoExibicao": "Legendado",
-    "anoLancamento": 2020
+    "anoLancamento": 2020,
+    "qtdReviews": 280900
   },
   {
     "id": 8,
@@ -101,7 +108,8 @@
     "periodoLancamento": "Outono",
     "isFavorito": false,
     "tipoExibicao": "Legendado",
-    "anoLancamento": 2006
+    "anoLancamento": 2006,
+    "qtdReviews": 230800
   },
   {
     "id": 9,
@@ -114,7 +122,8 @@
     "periodoLancamento": "Inverno",
     "isFavorito": false,
     "tipoExibicao": "Legendado",
-    "anoLancamento": 2017
+    "anoLancamento": 2017,
+    "qtdReviews": 120500
   },
   {
     "id": 10,
@@ -127,7 +136,8 @@
     "periodoLancamento": "Verão",
     "isFavorito": true,
     "tipoExibicao": "Legendado",
-    "anoLancamento": 1999
+    "anoLancamento": 1999,
+    "qtdReviews": 902000
   },
   {
     "id": 11,
@@ -140,7 +150,8 @@
     "periodoLancamento": "Outono",
     "isFavorito": false,
     "tipoExibicao": "Legendado",
-    "anoLancamento": 2002
+    "anoLancamento": 2002,
+    "qtdReviews": 840000
   },
   {
     "id": 12,
@@ -153,7 +164,8 @@
     "periodoLancamento": "Primavera",
     "isFavorito": false,
     "tipoExibicao": "Legendado",
-    "anoLancamento": 2013
+    "anoLancamento": 2013,
+    "qtdReviews": 650000
   },
   {
     "id": 13,
@@ -166,7 +178,8 @@
     "periodoLancamento": "Verão",
     "isFavorito": false,
     "tipoExibicao": "Dublado",
-    "anoLancamento": 1989
+    "anoLancamento": 1989,
+    "qtdReviews": 50900
   },
   {
     "id": 14,
@@ -179,6 +192,7 @@
     "periodoLancamento": "Outono",
     "isFavorito": false,
     "tipoExibicao": "Legendado",
-    "anoLancamento": 2004
+    "anoLancamento": 2004,
+    "qtdReviews": 304500
   }
 ]

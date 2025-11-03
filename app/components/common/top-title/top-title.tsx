@@ -6,7 +6,7 @@ import styles from "./top-title.styles";
 interface TopTitleModel {
     title: string,
     width?: 300 | 330 | 350 | 380,
-    fontSize?: 16 | 24,
+    fontSize?: 16 | 20 |  24,
     padding?: 0 | 16
 }
 

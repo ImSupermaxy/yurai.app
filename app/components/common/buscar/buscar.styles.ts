@@ -2,11 +2,11 @@ import { colors } from "@/constants/colors";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    conteiner: {
+    container: {
         display: "flex",
         flexDirection: "column",
         gap: 35,
-        paddingHorizontal: 12
+        paddingHorizontal: 12,
     },
     content: {
         display: "flex",

@@ -1,7 +1,7 @@
 import { colors } from "@/constants/colors";
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         height: 52,
         width: "auto",
@@ -14,3 +14,5 @@ export const styles = StyleSheet.create({
         fontSize: 16
     }
 });
+
+export default styles;

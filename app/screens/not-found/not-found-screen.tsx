@@ -1,7 +1,7 @@
 import { colors } from "@/constants/colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { FlatList, Text, View } from "react-native";
-import styles from "./not-found.styles";
+import styles from "./not-found-screen.styles";
 
 export function NotFoundScreen() {
     const aFazer = [

@@ -2,11 +2,25 @@ import { animeService, AnimeStorageModel } from '@/service/animes.service';
 import { reviewService, ReviewStorageModel } from '@/service/reviews.service';
 import React, { createContext, PropsWithChildren, useContext, useEffect, useMemo, useState } from 'react';
 
-const SettingsContext = createContext<{animes?: AnimeStorageModel[], reviews?: ReviewStorageModel[]}>({});
-export const useSettingsState = () => useContext(SettingsContext);
+interface SettingsContextProps {
+  animes: AnimeStorageModel[];
+  reviews: ReviewStorageModel[];
+  animeSelected: AnimeStorageModel | null;
+  setAnimes: React.Dispatch<React.SetStateAction<AnimeStorageModel[]>>;
+  setReviews: React.Dispatch<React.SetStateAction<ReviewStorageModel[]>>;
+  setAnimeSelected: React.Dispatch<React.SetStateAction<AnimeStorageModel | null>>;
+}
+
+const SettingsContext = createContext<SettingsContextProps | undefined>(undefined);
+export const useSettingsState = () => {
+  const context = useContext(SettingsContext);
+  if (!context) throw new Error('useSettingsState deve ser usado dentro de SettingsProvider');
+  return context;
+};
 
 export function SettingsProvider({ children }: PropsWithChildren) {
   const [animes, setAnimes] = useState(([] as AnimeStorageModel[]));
+  const [animeSelected, setAnimeSelected] = useState<AnimeStorageModel | null>(null);
   const [reviews, setReviews] = useState(([] as ReviewStorageModel[]));
 
   useEffect(() => {
@@ -27,15 +41,16 @@ export function SettingsProvider({ children }: PropsWithChildren) {
     getReviews();
   }, []);
 
-
   const value: any = useMemo(
     () => ({
       animes,
       reviews,
+      animeSelected,
       setAnimes,
       setReviews,
+      setAnimeSelected,
     }),
-    [animes, reviews]
+    [animes, reviews, animeSelected]
   );
 
   return <SettingsContext.Provider value={value}>{children}</SettingsContext.Provider>;

@@ -37,6 +37,7 @@ export default function TabLayout() {
                 name={route.routerName} 
                 component={route.component!}
                 options={{
+                  animation: "fade",
                   // sceneStyle: styles.container,
                   headerShown: true,
                   header: () => ( <HeaderCustom /> )

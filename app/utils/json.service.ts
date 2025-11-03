@@ -10,7 +10,7 @@ async function get<T>(fileName: string, completePath = "", useDefaultPath = true
         if (!success)
             return undefined;
 
-        console.log(path);
+        // console.log(path);
 
         const response = await fetch(path);
         // console.log(response);

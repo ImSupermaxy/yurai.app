@@ -1,11 +1,13 @@
 import CardList from "@/components/common/card-list/card-list";
 import TopTitle from "@/components/common/top-title/top-title";
+import AnimeDetailModal from "@/components/modal/anime-detail-modal/anime-detail-modal";
 import { useSettingsState } from "@/context/settings-provider";
 import { AnimeStorageModel } from "@/service/animes.service";
-import React from "react";
+import { useIsFocused } from "@react-navigation/native";
+import React, { useEffect, useState } from "react";
 import { FlatList, View } from "react-native";
-import screen_styles from "./../screen-default.styles";
-import { styles } from "./home.styles";
+import screen_styles from "../screen-default.styles";
+import styles from "./home-screen.styles";
 
 interface HomeTopicsModel {
   topico: string
@@ -13,7 +15,15 @@ interface HomeTopicsModel {
 }
 
 export default function HomeScreen() {
-  const { animes, reviews } = useSettingsState();
+  const isFocused = useIsFocused();
+
+  const { animes, reviews, animeSelected, setAnimeSelected } = useSettingsState();
+  const [openAnimeDetailModal, setOpenAnimeDetailModal] = useState(false);
+
+  function changeVisibiltyModal() {
+    setOpenAnimeDetailModal(animeSelected !== null && isFocused);
+  }
+
   let populares: AnimeStorageModel[] = []
   let novidades: AnimeStorageModel[] = [];
   let melhoresAvaliados: AnimeStorageModel[] = [];
@@ -34,6 +44,10 @@ export default function HomeScreen() {
     { animes: favoritos, topico: "Favoritos" },
   ];
 
+  useEffect(() => {
+    changeVisibiltyModal();
+  }, [isFocused, animeSelected]);
+
   return (
     <View style={[screen_styles.mainContainer]}>
       <FlatList
@@ -43,7 +57,7 @@ export default function HomeScreen() {
         renderItem={({ item }) => (
           <View style={styles.vitrines}>
               <TopTitle title={item.topico} />
-              <CardList animes={item.animes ?? []} />
+              <CardList animes={item.animes ?? []} forma={"simples"} />
           </View>
         )}
         // horizontal
@@ -52,6 +66,8 @@ export default function HomeScreen() {
         showsVerticalScrollIndicator={true}
         alwaysBounceVertical={true}
         />
+        
+        <AnimeDetailModal isVisible={openAnimeDetailModal} changeStateModal={() => { setAnimeSelected(null) }} anime={animeSelected} />
     </View>
   );
 }

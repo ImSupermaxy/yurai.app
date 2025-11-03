@@ -1,5 +1,5 @@
 import { TextInput, TextInputProps } from "react-native";
-import { styles } from "./input-custom.styles";
+import styles from "./input-custom.styles";
 
 interface InputModel {
     
