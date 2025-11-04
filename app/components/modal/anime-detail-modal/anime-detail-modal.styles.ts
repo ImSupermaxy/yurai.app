@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
     },
     rightSide: {
         flexDirection: "column",
-        gap: 8
+        gap: 8,
+        maxWidth: 70,
     },
     rating: {
         flexDirection: "row"
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     },
     bodyActions: {
         flexDirection: "row",
-        gap: 7,
+        gap: 6,
         alignItems: "center",
     },
     action: {

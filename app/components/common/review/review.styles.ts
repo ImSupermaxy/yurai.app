@@ -3,16 +3,44 @@ import { StyleSheet } from "react-native";
 
 const style = StyleSheet.create({
     container: {
-        flexDirection: "column",
-        gap: 24
-    },
-    title: {
-        color: colors.global.selecionado,
-        fontSize: 16,
-        fontWeight: "bold"
+        height: "auto",
+        width: "100%",
+        flexDirection: "row",
+        gap: 32,
     },
     content: {
-        backgroundColor: colors.global.backgroundBackColor,
+        flexDirection: "column",
+        gap: 8,
+        maxWidth: 234
+    },
+    header: {
+        flexDirection: "row",
+        justifyContent: "space-between"
+    },
+    account: {
+        flexDirection: "row",
+        alignItems: "center",
+        gap: 2
+    },
+    userInfo: {
+        flexDirection: "column",
+        justifyContent: "flex-start"
+    },
+    text: {
+        fontSize: 12,
+        fontWeight: "bold",
+        color: colors.global.text
+    },
+    arroba: {
+        fontSize: 10,
+        fontWeight: "regular",
+        color: colors.gray[300]
+    },
+    actions: {
+        display: "flex",
+        flexDirection: "column",
+        alignContent: "space-between",
+        justifyContent: "space-between"
     }
 });
 

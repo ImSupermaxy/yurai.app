@@ -9,7 +9,9 @@ export type ReviewStorageModel = {
     qtdEstrelas: number
     likes: number
     disLikes: number
-    isUserReview: boolean,
+    isUserReview: boolean
+    userLiked: boolean
+    userDisliked: boolean
     animeId: number
 }
 

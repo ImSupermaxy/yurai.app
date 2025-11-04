@@ -15,17 +15,18 @@ export default function ReviewList({ title, reviews }: ReviewListModel) {
             <FlatList 
                 data={reviews}
                 // accessibilityShowsLargeContentViewer={true}
-                alwaysBounceHorizontal={true}
-                contentContainerStyle={{ paddingVertical: 16, gap: 10 }}
+                // alwaysBounceHorizontal={true}
+                alwaysBounceVertical={ false }
+                contentContainerStyle={{ paddingVertical: 16, gap: 32 }}
                 keyExtractor={(item: ReviewStorageModel) => item.id!.toString()}
-                renderItem={(item) => (
-                    <Review />
+                renderItem={({ item }) => (
+                    <Review review={item} userIcon={"account"} />
                 )}
                 horizontal={false}
                 style={style.container}
-                showsVerticalScrollIndicator={true}
-                alwaysBounceVertical={true}
-                nestedScrollEnabled
+                showsVerticalScrollIndicator={false}
+                nestedScrollEnabled={false}
+                scrollEnabled={false}
             />
         </View>
     );

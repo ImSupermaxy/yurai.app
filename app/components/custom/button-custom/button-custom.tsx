@@ -10,7 +10,8 @@ interface ButtonCustomModel {
     size?: number,
     color?: string,
     backgroundColor?: string,
-    invertColors?: boolean 
+    invertColors?: boolean,
+    fontWeight?: "medium" | "bold" | "regular" 
 }
 
 export default function ButtonCustom({ 
@@ -21,12 +22,25 @@ export default function ButtonCustom({
     backgroundColor = colors.global.backgroundColor, 
     color = colors.global.text, 
     invertColors = true, 
+    fontWeight = "medium",
     ...rest 
 }: ButtonCustomModel & TouchableOpacityProps) {
     return (
-        <TouchableOpacity style={[style.container, { backgroundColor: !invertColors ? backgroundColor : color}]} {...rest}>
-            <MaterialCommunityIcons name={icon} color={!invertColors ? color : backgroundColor} size={20} />
-            <Text style={[{ color: !invertColors ? color : backgroundColor, fontSize: 12, fontWeight: "medium" }]}>{title}</Text>
+        <TouchableOpacity 
+            style={[style.container, { backgroundColor: !invertColors ? backgroundColor : color}]}
+            onPress={onPress} 
+            {...rest}
+        >
+            <MaterialCommunityIcons 
+                name={icon} 
+                color={!invertColors ? color : backgroundColor} 
+                size={20} 
+            />
+            <Text 
+                style={[{ color: !invertColors ? color : backgroundColor, fontSize: 12, fontWeight: fontWeight }]}
+            >
+                    {title}
+            </Text>
         </TouchableOpacity>
     );
 }
