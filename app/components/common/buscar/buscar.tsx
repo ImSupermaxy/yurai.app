@@ -63,22 +63,22 @@ export default function Buscar() {
     }
 
     return (
-        <View style={scree_styles.mainContainer}>
-          <View style={[styles.container]}>
-              <InputCustom placeholder={"Buscar..."} value={search ?? ''} onChangeText={onChangeSearch} />
-              
-              <View style={styles.content}>
-                  <TopTitle fontSize={20} title={title} width={300} padding={16} />
-                  {(animesFiltred.length > 0) ? (
-                      <CardList animes={animesFiltred} forma={"detalhado"} horizontal={false} />
-                  ) : (
-                      <View style={styles.notFound}>
-                          <Text style={styles.text}>{"Desculpe, mas não conseguimos encontrar nenhum resultado"}</Text>
-                          <Text style={styles.text}>{":("}</Text>
-                      </View>
-                  )}
-              </View>
-          </View>
+      <View style={scree_styles.mainContainer}>
+        <View style={[styles.container]}>
+            <InputCustom placeholder={"Buscar..."} value={search ?? ''} onChangeText={onChangeSearch} />
+            
+            <View style={styles.content}>
+                <TopTitle fontSize={20} title={title} width={300} padding={16} />
+                {(animesFiltred.length > 0) ? (
+                  <CardList animes={animesFiltred} forma={"detalhado"} horizontal={false} />
+                ) : (
+                    <View style={styles.notFound}>
+                        <Text style={styles.text}>{"Desculpe, mas não conseguimos encontrar nenhum resultado"}</Text>
+                        <Text style={styles.text}>{":("}</Text>
+                    </View>
+                )}
+            </View>
         </View>
+      </View>
     );
 }

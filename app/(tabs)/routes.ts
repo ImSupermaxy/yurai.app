@@ -1,4 +1,5 @@
 import AddScreen from "@/screens/add/add-screen";
+import FavoriteScreen from "@/screens/favorite/favorite-screen";
 import HomeScreen from "@/screens/home/home-screen";
 import { NotFoundScreen } from "@/screens/not-found/not-found-screen";
 import SearchScreen from "@/screens/search/search-screen";
@@ -30,7 +31,7 @@ const appRoutes: AppRoutesMenuModel[] = [
         routerIcon: "plus-circle-outline"
     },
     {
-        component: defaultScreen,
+        component: FavoriteScreen,
         routerName: "Favoritos",
         routerIcon: "cards-heart-outline"
     },

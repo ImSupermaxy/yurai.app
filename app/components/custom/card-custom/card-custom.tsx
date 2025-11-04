@@ -1,3 +1,4 @@
+import Estrelas from "@/components/common/estrelas/estrelas";
 import { useSettingsState } from "@/context/settings-provider";
 import { animeService, AnimeStorageModel } from "@/service/animes.service";
 import { Image, TouchableOpacity, View } from "react-native";
@@ -9,13 +10,15 @@ export type ModeloCardModel = "simples" | "detalhado";
 export interface CardModel {
     forma?: ModeloCardModel
     // onPressAnime: () => void,
-    anime: AnimeStorageModel
+    anime: AnimeStorageModel,
+    showActions?: boolean
 }
 
 export default function CardCustom({
         // onPressAnime,
         anime,
         forma = "simples",
+        showActions = false
     }: CardModel) 
 {
     const { setAnimeSelected } = useSettingsState();
@@ -39,6 +42,7 @@ export default function CardCustom({
                     </View>
                 ) : (
                     <Card style={styles.stylesDetalhado.container} mode="contained">
+                        {/* <View></View> */}
                         <View style={styles.stylesDetalhado.content}>
                             <Image source={ animeService.cards[anime.cardImage] } style={styles.stylesDetalhado.image} />
 
@@ -48,10 +52,11 @@ export default function CardCustom({
                                     <Text variant="bodyMedium" style={styles.stylesDetalhado.text}>{ anime.periodoLancamento }</Text>
                                     <Text variant="bodyMedium" style={styles.stylesDetalhado.text}>{ anime.anoLancamento }</Text>
                                 </View>
-                                <Text variant="bodyMedium" style={styles.stylesDetalhado.text}>{ anime.qtdEstrelas }</Text>
+                                <Estrelas quantidade={anime.qtdEstrelas ?? 0} exibirVazia={true} size={20} />
                                 <Text variant="bodyMedium" style={styles.stylesDetalhado.text}>{ anime.tipoExibicao }</Text>
                             </View>
                         </View>
+                        {/* actions */}
                     </Card>
                 )}
             </TouchableOpacity>

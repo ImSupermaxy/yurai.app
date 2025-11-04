@@ -1,4 +1,4 @@
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 
 import { AnimeStorageModel } from "@/service/animes.service";
 import CardCustom, { ModeloCardModel } from "../../custom/card-custom/card-custom";
@@ -12,11 +12,10 @@ type CardListModel = {
 }
 
 export default function CardList({ animes, forma = "simples", horizontal = true }: CardListModel) {
+    const applyFooter = !horizontal ? 250 : 0;
     return (
         <FlatList 
             data={animes}
-            // accessibilityShowsLargeContentViewer={true}
-            alwaysBounceHorizontal={true}
             contentContainerStyle={{ gap: horizontal ? 18 : 26 }}
             keyExtractor={(item) => item.id!.toString()}
             renderItem={({ item }) => (
@@ -26,12 +25,17 @@ export default function CardList({ animes, forma = "simples", horizontal = true 
                 />
             )}
             horizontal={horizontal}
-            style={styles.container}
-            // contentContainerStyle={stylekus.content}
+            style={[styles.container]}
+            // alwaysBounceHorizontal={true}
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={!horizontal}
             alwaysBounceVertical={!horizontal}
-            nestedScrollEnabled
+            ListFooterComponent={<View style={{ height: applyFooter }} />}
+
+            // alwaysBounceVertical={ false }
+            // showsVerticalScrollIndicator={false}
+            // nestedScrollEnabled={false}
+            // scrollEnabled={false}
         />
     );
 }
