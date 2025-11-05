@@ -3,13 +3,20 @@ import { colors } from '@/constants/colors';
 import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 
-export default function SeeMoreText ({ text = "", numberOfLines = 3 }) {
+interface SeeMoreText {
+    text: string
+    numberOfLines: number
+    style?: any | null
+}
+
+
+export default function SeeMoreText ({ text = "", numberOfLines = 3, style = null }: SeeMoreText) {
   const [expanded, setExpanded] = useState(false);
 
   return (
     <View>
       <Text
-        style={[{ fontSize: 12, fontWeight: "regular", color: colors.global.text }]}
+        style={[style === null ? { fontSize: 12, fontWeight: "regular", color: colors.global.text } : style]}
         numberOfLines={expanded ? undefined : numberOfLines}
       >
         {text}

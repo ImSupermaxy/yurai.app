@@ -70,7 +70,7 @@ export default function Buscar() {
             <View style={styles.content}>
                 <TopTitle fontSize={20} title={title} width={300} padding={16} />
                 {(animesFiltred.length > 0) ? (
-                  <CardList animes={animesFiltred} forma={"detalhado"} horizontal={false} />
+                  <CardList animes={animesFiltred} forma={"detalhado"} horizontal={false} applyPaddingBottom={true} />
                 ) : (
                     <View style={styles.notFound}>
                         <Text style={styles.text}>{"Desculpe, mas não conseguimos encontrar nenhum resultado"}</Text>

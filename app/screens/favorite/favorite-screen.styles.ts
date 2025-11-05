@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     content: {
         display: "flex",
         flexDirection: "column",
-        gap: 15,
+        gap: 24
     },
 });
 

@@ -8,11 +8,14 @@ type CardListModel = {
     horizontal?: boolean
     forma?: ModeloCardModel
     // onPressAnime: () => void
-    animes: AnimeStorageModel[],
+    animes: AnimeStorageModel[]
+    scrollEnabled?: boolean
+    applyPaddingBottom?: boolean
+    showActions?: boolean
 }
 
-export default function CardList({ animes, forma = "simples", horizontal = true }: CardListModel) {
-    const applyFooter = !horizontal ? 250 : 0;
+export default function CardList({ animes, forma = "simples", horizontal = true, scrollEnabled = true, applyPaddingBottom = false, showActions = false }: CardListModel) {
+    const applyFooter = (applyPaddingBottom && !horizontal) ? 250 : 0;
     return (
         <FlatList 
             data={animes}
@@ -22,6 +25,7 @@ export default function CardList({ animes, forma = "simples", horizontal = true 
                 <CardCustom 
                     anime={item}
                     forma={forma}
+                    showActions={showActions}
                 />
             )}
             horizontal={horizontal}
@@ -33,9 +37,8 @@ export default function CardList({ animes, forma = "simples", horizontal = true 
             ListFooterComponent={<View style={{ height: applyFooter }} />}
 
             // alwaysBounceVertical={ false }
-            // showsVerticalScrollIndicator={false}
             // nestedScrollEnabled={false}
-            // scrollEnabled={false}
+            scrollEnabled={scrollEnabled}
         />
     );
 }

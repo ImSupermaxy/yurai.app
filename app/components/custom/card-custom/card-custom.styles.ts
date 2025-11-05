@@ -48,6 +48,7 @@ const stylesDetalhado = StyleSheet.create({
     content: {
         height: "auto",
         flexDirection: "row",
+        alignContent: "center",
         gap: 12
     },
     info: {
@@ -71,6 +72,13 @@ const stylesDetalhado = StyleSheet.create({
         fontSize: 14,
         fontFamily: 'Roboto_400Regular',
         fontWeight: "bold",
+    },
+    actions: {
+        width: "auto",
+        flexDirection: "column",
+        alignContent: "center",
+        alignSelf: "center",
+        gap: 12
     }
 });
 

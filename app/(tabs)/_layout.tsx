@@ -10,6 +10,8 @@ import { SettingsProvider } from '@/context/settings-provider';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GetRoutes } from './routes';
 
+
+
 const Tab = createBottomTabNavigator();
 
 export default function TabLayout() {
@@ -19,12 +21,27 @@ export default function TabLayout() {
     <SafeAreaProvider >
       <SettingsProvider>
         <Tab.Navigator
+        // screenListeners={{
+        //   tabPress: (e: any) => {
+        //     // Impede a navegação imediata
+        //     e.preventDefault();
+          
+        //     const { navigation, target } = e;
+          
+        //     // Exemplo: delay de 500ms
+        //     setTimeout(() => {
+        //       navigation.navigate(target);
+        //     }, 500);
+        //   },
+        // }}
+        
           screenOptions={({ route }) => ({
             headerShown: true,
             tabBarShowLabel: true,
             tabBarActiveTintColor: theme.tabIconSelected,
             tabBarInactiveTintColor: theme.tabIconDefault,
             tabBarStyle: [stylesFooter],
+            
             tabBarIcon: ({ color, size }) => {
               const maped = routes.filter(r => r.routerName === route.name).at(0);
               return <MaterialCommunityIcons name={maped?.routerIcon} size={size} color={color} />;

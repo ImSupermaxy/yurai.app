@@ -2,6 +2,7 @@ import { ImageSourcePropType } from "react-native";
 // Importa o arquivo JSON diretamente
 import animesTeste from '@/assets/data/animes/animes-teste.json';
 import animes from '@/assets/data/animes/animes.json';
+import { BaseResourceService } from "../../shared/base-resource.service";
 
 type ImagesCardAvaliable = "card" | "banner" | "fullmetalAlchemistCard" | "fullmetalBrotherhoodCard" | "onePieceCard" | "chainsawManCard" 
         | "bleachCard" | "blackCloverCard" | "attackOnTitanCard" | "narutoCard" | "blueLockCard" | "deathNoteCard" | "kikiDeliveryServiceCard" | "tokyoRevengersCard"
@@ -32,7 +33,7 @@ const cardDefault = require('@/assets/images/cards/card.png');
 const bannerDefault = require('@/assets/images/banners/banner.png');
 
 // Adicionar aqui o caminho das outras imagens...
-const cards: {
+export const cards: {
     card: ImageSourcePropType,
     banner: ImageSourcePropType,
     fullmetalAlchemistCard: ImageSourcePropType,
@@ -82,7 +83,7 @@ const cards: {
     haikyuuCard: require("@/assets/images/cards/Haikyu.jpeg"),
 };
 
-const banners: {
+export const banners: {
     card: ImageSourcePropType,
     banner: ImageSourcePropType,
     fullmetalAlchemistBanner: ImageSourcePropType,
@@ -132,36 +133,17 @@ const banners: {
     haikyuuBanner: bannerDefault, //require("@/assets/images/banners/Haikyu.jpeg"),
 };
 
-// const ANIMES_FILE_NAME = "animes-teste";
-// async function get(): Promise<AnimeStorageModel[]> {
-//     try {
-//         console.log("service:");
-//         const storage = await jsonService.get<AnimeStorageModel[]>(ANIMES_FILE_NAME, "animes");
-//         console.log(storage);
-//         if (storage === undefined)
-//             return [];
+class AnimeService extends BaseResourceService<AnimeStorageModel> {
 
-//         return storage;
-//     }
-//     catch (error) {
-//         throw error;
-//     }
-// }
-
-function get(): AnimeStorageModel[] {
-    try {
+    constructor () {
         const testeJSONAnime = animesTeste as AnimeStorageModel[];
         const storage: AnimeStorageModel[] = animes as AnimeStorageModel[];
 
-        if (storage === undefined)
-            return [];
-
-        return storage ?? testeJSONAnime ?? [];
+        super("anime", storage);
     }
-    catch (error) {
-        throw error;
-    }
+    
 }
 
+const service = new AnimeService();
 
-export const animeService = { get, cards, banners };
+export const animeService = { service, cards, banners };

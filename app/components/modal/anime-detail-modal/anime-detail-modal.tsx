@@ -1,5 +1,5 @@
 import InteractiveIcon from "@/components/common/interactive-icon/interactive-icon";
-import { animeService, AnimeStorageModel } from "@/service/animes.service";
+import { animeService } from "@/service/animes.service";
 import { ImageBackground, Modal, ScrollView, StyleSheet, Text, View } from "react-native";
 // import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Estrelas from "@/components/common/estrelas/estrelas";
@@ -17,24 +17,29 @@ import ReviewEditModal from "../review-edit-modal/review-edit-modal";
 import styles from "./anime-detail-modal.styles";
 
 interface AnimeDetailModalModel {
-    anime: AnimeStorageModel | null,
+    // animeId: number,
     // userReviews: ReviewStorageModel[]
     // reviews: ReviewStorageModel[]
 }
 
-export default function AnimeDetailModal({ isVisible, changeStateModal, anime }: AnimeDetailModalModel & ModalDefaultModel) { 
-  const { reviews } = useSettingsState();
+export default function AnimeDetailModal({ isVisible, changeStateModal }: AnimeDetailModalModel & ModalDefaultModel) { 
+  const { reviews, animeSelected: anime, animes, setAnimes } = useSettingsState();
+  
   const banner = animeService.banners[anime?.bannerImage!];
 
   const [openNovaReview, setOpenNovaReview] = useState(false);
   const [reviewsFiltred, setReviewsFiltred] = useState<ReviewStorageModel[]>(reviews);
   const [reviewsUserFiltred, setReviewsUserFiltred] = useState<ReviewStorageModel[]>([]);
-  const [isFavorito, setIsFavorito] = useState(anime?.isFavorito);
+  const [isFavorito, setIsFavorito] = useState<boolean>(anime === null ? false : anime!.isFavorito!);
   
   useFocusEffect(
     useCallback(() => {
       setReviewsFiltred(reviews.filter(r => r.animeId == anime?.id && !r.isUserReview));
       setReviewsUserFiltred(reviews.filter(r => r.animeId == anime?.id && r.isUserReview));
+
+      if (!!isVisible)
+        setIsFavorito(anime === null ? false : anime!.isFavorito!);
+
     }, [isVisible])
   );
 
@@ -62,6 +67,10 @@ export default function AnimeDetailModal({ isVisible, changeStateModal, anime }:
 
   function changeFavorito() {
     setIsFavorito(!isFavorito);
+    anime!.isFavorito = !isFavorito;
+    const tmpAnimes = animes.filter(a => a.id !== anime?.id);
+    tmpAnimes.push(anime!);
+    setAnimes(tmpAnimes.sort((a, b) => a.id - b.id));
   }
 
   return (

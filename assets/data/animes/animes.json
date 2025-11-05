@@ -8,7 +8,7 @@
     "qtdEstrelas": 5,
     "review": 4.9,
     "periodoLancamento": "Primavera",
-    "isFavorito": true,
+    "isFavorito": false,
     "tipoExibicao": "Legendado",
     "anoLancamento": 2009,
     "qtdReviews": 820000
@@ -78,7 +78,7 @@
     "qtdEstrelas": 4.9,
     "review": 4.9,
     "periodoLancamento": "Outono",
-    "isFavorito": false,
+    "isFavorito": true,
     "tipoExibicao": "Legendado",
     "anoLancamento": 2023,
     "qtdReviews": 475200
@@ -92,7 +92,7 @@
     "qtdEstrelas": 4.8,
     "review": 4.9,
     "periodoLancamento": "Outono",
-    "isFavorito": true,
+    "isFavorito": false,
     "tipoExibicao": "Legendado",
     "anoLancamento": 2020,
     "qtdReviews": 280900
@@ -134,7 +134,7 @@
     "qtdEstrelas": 5,
     "review": 4.9,
     "periodoLancamento": "Verão",
-    "isFavorito": true,
+    "isFavorito": false,
     "tipoExibicao": "Legendado",
     "anoLancamento": 1999,
     "qtdReviews": 902000

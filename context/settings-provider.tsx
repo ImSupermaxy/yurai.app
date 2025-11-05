@@ -1,5 +1,6 @@
-import { animeService, AnimeStorageModel } from '@/service/animes.service';
+import { animeService } from '@/service/animes.service';
 import { reviewService, ReviewStorageModel } from '@/service/reviews.service';
+import { AnimeStorageModel } from '@/storage/anime-storage';
 import React, { createContext, PropsWithChildren, useContext, useEffect, useMemo, useState } from 'react';
 
 interface SettingsContextProps {
@@ -25,7 +26,7 @@ export function SettingsProvider({ children }: PropsWithChildren) {
 
   useEffect(() => {
     async function getAnime() {
-        const allAnimes = await animeService.get();
+        const allAnimes = await animeService.service.get();
         setAnimes(allAnimes);
     }
 
@@ -34,7 +35,7 @@ export function SettingsProvider({ children }: PropsWithChildren) {
 
   useEffect(() => {
     async function getReviews() {
-        const allReviews = await reviewService.get();
+        const allReviews = await reviewService.service.get();
         setReviews(allReviews);
     }
 

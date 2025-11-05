@@ -1,4 +1,5 @@
-import reviews from "@/assets/data/reviews/reviews-teste.json"
+import reviewsTeste from "@/assets/data/reviews/reviews-teste.json"
+import { BaseResourceService } from "../../shared/base-resource.service"
 
 export type ReviewStorageModel = {
     id: number
@@ -15,66 +16,17 @@ export type ReviewStorageModel = {
     animeId: number
 }
 
-// const REVIEWS_STORAGE_KEY = "review-teste";
-// async function get(): Promise<ReviewStorageModel[]> {
-//     try {
-//         console.log("service:");
-//         const storage = await jsonService.get<ReviewStorageModel[]>(REVIEWS_STORAGE_KEY, "reviews");
-//         console.log(storage);
-//         if (storage === undefined)
-//             return [];
+class ReviewService extends BaseResourceService<ReviewStorageModel> {
 
-//         return storage;
-//     }
-//     catch (error) {
-//         throw error;
-//     }
-// }
+    constructor () {
+        const testeJSON = reviewsTeste as ReviewStorageModel[];
+        // const storage: ReviewStorageModel[] = reviews as ReviewStorageModel[];
 
-// async function getOtherUsers(userName: string): Promise<ReviewStorageModel[]> {
-//     const storage = await get();
-
-//     return storage.filter(review =>
-//         review.nomeUser.toLowerCase() !== userName.toLowerCase()
-//     );
-// }
-
-// async function getUser(userName: string): Promise<ReviewStorageModel[]> {
-//     const storage = await get();
-
-//     return storage.filter(review =>
-//         review.nomeUser.toLowerCase() === userName.toLowerCase()
-//     );
-// }
-
-function get(): ReviewStorageModel[] {
-    try {
-        const storage: ReviewStorageModel[] = reviews as ReviewStorageModel[];
-
-        if (storage === undefined)
-            return [];
-
-        return storage;
+        super("review", testeJSON);
     }
-    catch (error) {
-        throw error;
-    }
+    
 }
 
-function getOtherUsers(userName: string): ReviewStorageModel[] {
-    const storage = get();
+const service = new ReviewService();
 
-    return storage.filter(review =>
-        review.nomeUser.toLowerCase() !== userName.toLowerCase()
-    );
-}
-
-function getUser(userName: string): ReviewStorageModel[] {
-    const storage = get();
-
-    return storage.filter(review =>
-        review.nomeUser.toLowerCase() === userName.toLowerCase()
-    );
-}
-
-export const reviewService = { get, getOtherUsers, getUser };
+export const reviewService = { service };

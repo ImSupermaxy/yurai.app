@@ -16,7 +16,6 @@ export default function AddScreen() {
 
   useEffect(() => {
     changeVisibiltyModal();
-    console.log(openAnimeDetailModal);
   }, [isFocused, animeSelected]);
   
   return (
