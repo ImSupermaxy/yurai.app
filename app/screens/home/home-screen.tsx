@@ -67,7 +67,7 @@ export default function HomeScreen() {
         alwaysBounceVertical={true}
         />
         
-        <AnimeDetailModal isVisible={openAnimeDetailModal} changeStateModal={() => { setAnimeSelected(null) }} />
+        <AnimeDetailModal isVisible={openAnimeDetailModal} onCloseModal={() => { setAnimeSelected(null) }} />
     </View>
   );
 }

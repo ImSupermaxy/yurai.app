@@ -39,7 +39,7 @@ export default function ButtonCustom({
             <Text 
                 style={[{ color: !invertColors ? color : backgroundColor, fontSize: 12, fontWeight: fontWeight }]}
             >
-                    {title}
+                {title}
             </Text>
         </TouchableOpacity>
     );

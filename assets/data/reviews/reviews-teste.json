@@ -203,18 +203,7 @@
         "isUserReview": false,
         "animeId": 5
     },
-    {
-        "id": 18,
-        "nomeUser":  "Seu usuário",
-        "arrobaUser":  "meuusuario",
-        "comentario": "Cras lobortis nisl quis consectetur commodo. Aliquam nec interdum ipsum. Sed libero neque, iaculis ut malesuada nec, pharetra at mi. Duis porta, massa ut fringilla posuere, sem lorem facilisis lorem, eu porttitor nibh massa scelerisque ipsum. Proin nec convallis mi. Morbi iaculis quam in tempor pellentesque. Cras volutpat lorem dolor, nec euismod risus sodales sed. Integer eget est vel sem auctor.",
-        "nota": 4.5,
-        "qtdEstrelas": 4.5,
-        "likes": 102000,
-        "disLikes": 900000, 
-        "isUserReview": true,
-        "animeId": 6
-    },
+    
     {
         "id": 19,
         "nomeUser":  "Nome do usuário",

@@ -22,7 +22,7 @@ interface AnimeDetailModalModel {
     // reviews: ReviewStorageModel[]
 }
 
-export default function AnimeDetailModal({ isVisible, changeStateModal }: AnimeDetailModalModel & ModalDefaultModel) { 
+export default function AnimeDetailModal({ isVisible, onCloseModal }: AnimeDetailModalModel & ModalDefaultModel) { 
   const { reviews, animeSelected: anime, animes, setAnimes } = useSettingsState();
   
   const banner = animeService.banners[anime?.bannerImage!];
@@ -61,8 +61,8 @@ export default function AnimeDetailModal({ isVisible, changeStateModal }: AnimeD
     setOpenNovaReview(true);
   }
 
-  function changeStateModalNovaReview() {
-    setOpenNovaReview(!openNovaReview);
+  function closeReviewModal() {
+    setOpenNovaReview(false);
   }
 
   function changeFavorito() {
@@ -81,7 +81,7 @@ export default function AnimeDetailModal({ isVisible, changeStateModal }: AnimeD
         animationType="fade"
         style={{ height: "auto" }}
         
-        onRequestClose={changeStateModal} // Necessário no Android
+        onRequestClose={onCloseModal}
       >
         <View style={styles.container}>
           <ScrollView>
@@ -89,13 +89,13 @@ export default function AnimeDetailModal({ isVisible, changeStateModal }: AnimeD
               <View>
               {/* BEGGIN:: HEADER */}
                 <View style={styles.headerActions}>
-                  <InteractiveIcon onPress={changeStateModal} icon={"close"} />
+                  <InteractiveIcon onPress={onCloseModal} icon={"close"} />
                   <InteractiveIcon onPress={() => { console.log("adicionar mais ações com o anime...") }} icon={"dots-vertical"} />
                 </View>
                 <ImageBackground
-                  source={animeService.banners[anime?.bannerImage!]} // Caminho da imagem local
+                  source={animeService.banners[anime?.bannerImage!]}
                   style={headerStyle.banner}
-                  resizeMode="cover" // ou "contain", "stretch", etc.
+                  resizeMode="cover"
                 >
                   <LinearGradient
                     colors={[colors.global.backgroundColor, 'transparent']}
@@ -173,7 +173,7 @@ export default function AnimeDetailModal({ isVisible, changeStateModal }: AnimeD
         </View>     
       </Modal>
 
-      <ReviewEditModal isVisible={openNovaReview} anime={anime} changeStateModal={changeStateModalNovaReview} />
+      <ReviewEditModal isVisible={openNovaReview} onCloseModal={closeReviewModal} />
     </View>
   );
 }

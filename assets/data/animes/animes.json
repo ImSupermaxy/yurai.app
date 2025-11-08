@@ -8,7 +8,7 @@
     "qtdEstrelas": 5,
     "review": 4.9,
     "periodoLancamento": "Primavera",
-    "isFavorito": false,
+    "isFavorito": true,
     "tipoExibicao": "Legendado",
     "anoLancamento": 2009,
     "qtdReviews": 820000
@@ -22,7 +22,7 @@
     "qtdEstrelas": 4.7,
     "review": 4.8,
     "periodoLancamento": "Outono",
-    "isFavorito": true,
+    "isFavorito": false,
     "tipoExibicao": "Legendado",
     "anoLancamento": 2016,
     "qtdReviews": 672000

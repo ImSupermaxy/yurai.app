@@ -49,7 +49,8 @@ const stylesDetalhado = StyleSheet.create({
         height: "auto",
         flexDirection: "row",
         alignContent: "center",
-        gap: 12
+        gap: 12,
+        zIndex: 4
     },
     info: {
         flexDirection: "column",
@@ -76,8 +77,9 @@ const stylesDetalhado = StyleSheet.create({
     actions: {
         width: "auto",
         flexDirection: "column",
-        alignContent: "center",
+        // alignContent: "flex-start",
         alignSelf: "center",
+        alignItems: "flex-start",
         gap: 12
     }
 });

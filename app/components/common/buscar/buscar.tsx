@@ -1,6 +1,6 @@
 import CardList from "@/components/common/card-list/card-list";
 import TopTitle from "@/components/common/top-title/top-title";
-import { InputCustom } from "@/components/custom/input-custom/input-custom";
+import { SerachInputCustom } from "@/components/custom/search-input-custom/search-input-custom";
 import { useSettingsState } from "@/context/settings-provider";
 import scree_styles from "@/screens/screen-default.styles";
 import { AnimeStorageModel } from "@/service/animes.service";
@@ -31,7 +31,6 @@ export default function Buscar() {
         setSearch(null);
         setTitle(titleDefault);
         changeAnimesFiltred();
-    
       }, [])
     );
 
@@ -65,18 +64,19 @@ export default function Buscar() {
     return (
       <View style={scree_styles.mainContainer}>
         <View style={[styles.container]}>
-            <InputCustom placeholder={"Buscar..."} value={search ?? ''} onChangeText={onChangeSearch} />
+            <SerachInputCustom placeholder={"Buscar..."} value={search ?? ''} onChangeText={onChangeSearch} />
             
             <View style={styles.content}>
-                <TopTitle fontSize={20} title={title} width={300} padding={16} />
-                {(animesFiltred.length > 0) ? (
-                  <CardList animes={animesFiltred} forma={"detalhado"} horizontal={false} applyPaddingBottom={true} />
-                ) : (
-                    <View style={styles.notFound}>
-                        <Text style={styles.text}>{"Desculpe, mas não conseguimos encontrar nenhum resultado"}</Text>
-                        <Text style={styles.text}>{":("}</Text>
-                    </View>
-                )}
+              <TopTitle fontSize={20} title={title} width={300} padding={16} />
+              
+              {(animesFiltred.length > 0) ? (
+                <CardList animes={animesFiltred} forma={"detalhado"} horizontal={false} applyPaddingBottom={true} showActions={false} />
+              ) : (
+                <View style={styles.notFound}>
+                    <Text style={styles.text}>{"Desculpe, mas não conseguimos encontrar nenhum resultado"}</Text>
+                    <Text style={styles.text}>{":("}</Text>
+                </View>
+              )}
             </View>
         </View>
       </View>

@@ -26,6 +26,7 @@ export default function CardList({ animes, forma = "simples", horizontal = true,
                     anime={item}
                     forma={forma}
                     showActions={showActions}
+                    onlyView={false}
                 />
             )}
             horizontal={horizontal}

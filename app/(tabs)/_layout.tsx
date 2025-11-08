@@ -10,15 +10,13 @@ import { SettingsProvider } from '@/context/settings-provider';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GetRoutes } from './routes';
 
-
-
 const Tab = createBottomTabNavigator();
 
 export default function TabLayout() {
   const routes = GetRoutes();
 
   return (
-    <SafeAreaProvider >
+    <SafeAreaProvider>
       <SettingsProvider>
         <Tab.Navigator
         // screenListeners={{
@@ -54,7 +52,8 @@ export default function TabLayout() {
                 name={route.routerName} 
                 component={route.component!}
                 options={{
-                  animation: "fade",
+                  animation: "shift",
+                  //animation: "fade", //ESTÁ BUGANDO O NAVGATION... :( ...
                   // sceneStyle: styles.container,
                   headerShown: true,
                   header: () => ( <HeaderCustom /> )

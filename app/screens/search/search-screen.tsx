@@ -22,7 +22,7 @@ export default function SearchScreen() {
     <View>
       <Buscar />
       
-      <AnimeDetailModal isVisible={openAnimeDetailModal} changeStateModal={() => { setAnimeSelected(null) }} />
+      <AnimeDetailModal isVisible={openAnimeDetailModal} onCloseModal={() => { setAnimeSelected(null) }} />
     </View>
   );
 }

@@ -22,7 +22,7 @@ export default function AddScreen() {
     <View>
       <Buscar />
       
-      <ReviewEditModal isVisible={openAnimeDetailModal} changeStateModal={() => { setAnimeSelected(null) }} anime={animeSelected} />
+      <ReviewEditModal isVisible={openAnimeDetailModal} onCloseModal={() => { setAnimeSelected(null) }}/>
     </View>
   );
 }
