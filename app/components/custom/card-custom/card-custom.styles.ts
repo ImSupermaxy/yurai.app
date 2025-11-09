@@ -49,6 +49,7 @@ const stylesDetalhado = StyleSheet.create({
         height: "auto",
         flexDirection: "row",
         alignContent: "center",
+        justifyContent: "flex-start",
         gap: 12,
         zIndex: 4
     },

@@ -195,10 +195,13 @@
     "isSpoiler": false,
     "showReview": "toAll"
   },
+
+
+
   {
     "id": 15,
-    "nomeUser": "Marcela Duarte",
-    "arrobaUser": "marcela_duarte",
+    "nomeUser": "Aline Santos",
+    "arrobaUser": "aline_santos",
     "comentario": "Um dos animes mais bem feitos que já vi. A história é profunda, cheia de reviravoltas e com personagens que realmente evoluem. Cada episódio tem peso e significado, e o final é simplesmente perfeito. Difícil não se apegar aos irmãos Elric.",
     "nota": 5.0,
     "qtdEstrelas": 5.0,
@@ -209,8 +212,6 @@
     "isSpoiler": true,
     "showReview": "toAll"
   },
-
-  
   {
     "id": 16,
     "nomeUser": "Thiago Oliveira",
@@ -227,8 +228,8 @@
   },
   {
     "id": 17,
-    "nomeUser": "Beatriz Moraes",
-    "arrobaUser": "bea_moraes",
+    "nomeUser": "Aline Santos",
+    "arrobaUser": "aline_santos",
     "comentario": "Clássico absoluto. Emoção e superação em cada arco. Uma jornada inesquecível.",
     "nota": 5.0,
     "qtdEstrelas": 5.0,
@@ -241,8 +242,8 @@
   },
   {
     "id": 18,
-    "nomeUser": "Pedro Martins",
-    "arrobaUser": "pedro_martins",
+    "nomeUser": "Aline Santos",
+    "arrobaUser": "aline_santos",
     "comentario": "Apesar de ser um cotidiano atípico e antigo, as histórias e problemáticas são bem envolventes.",
     "nota": 4.8,
     "qtdEstrelas": 5.0,
@@ -283,8 +284,8 @@
   },
   {
     "id": 21,
-    "nomeUser": "Patrícia Lima",
-    "arrobaUser": "patricia_lima",
+    "nomeUser": "Aline Santos",
+    "arrobaUser": "aline_santos",
     "comentario": "Comentário de review genérico...",
     "nota": 4.8,
     "qtdEstrelas": 5.0,
@@ -311,8 +312,8 @@
   },
   {
     "id": 23,
-    "nomeUser": "Clara Mendes",
-    "arrobaUser": "clara_mendes",
+    "nomeUser": "Aline Santos",
+    "arrobaUser": "aline_santos",
     "comentario": "Comentário de review genérico...",
     "nota": 5.0,
     "qtdEstrelas": 5.0,
@@ -353,8 +354,8 @@
   },
   {
     "id": 26,
-    "nomeUser": "Caio Barbosa",
-    "arrobaUser": "caio_barbosa",
+    "nomeUser": "Aline Santos",
+    "arrobaUser": "aline_santos",
     "comentario": "Comentário de review genérico...",
     "nota": 4.0,
     "qtdEstrelas": 4.0,
@@ -382,8 +383,8 @@
   },
   {
     "id": 28,
-    "nomeUser": "Letícia Gomes",
-    "arrobaUser": "leticia_gomes",
+    "nomeUser": "Aline Santos",
+    "arrobaUser": "aline_santos",
     "comentario": "Comentário de review genérico...",
     "nota": 4.1,
     "qtdEstrelas": 4.0,
@@ -428,8 +429,8 @@
   },
   {
     "id": 31,
-    "nomeUser": "Felipe Cunha",
-    "arrobaUser": "felipe_cunha",
+    "nomeUser": "Aline Santos",
+    "arrobaUser": "aline_santos",
     "comentario": "Comentário de review genérico...",
     "nota": 4.3,
     "qtdEstrelas": 4.0,
@@ -484,8 +485,8 @@
   },
   {
     "id": 35,
-    "nomeUser": "Gustavo Ferreira",
-    "arrobaUser": "gustavo_ferreira",
+    "nomeUser": "Aline Santos",
+    "arrobaUser": "aline_santos",
     "comentario": "Comentário de review genérico...",
     "nota": 3.9,
     "qtdEstrelas": 4.0,

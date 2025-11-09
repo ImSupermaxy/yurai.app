@@ -36,12 +36,13 @@ const styleHeader = StyleSheet.create({
       borderColor: theme.backgroundHeaderFooter ,
       borderBottomColor: theme.backgroundHeaderFooter,
       // height: 90,
-      paddingHorizontal: 24,
+      paddingHorizontal: 16,
       paddingTop: 8,
       paddingBottom: 12,
       flexDirection: "row",
       justifyContent: "space-between",
       alignItems: "center",
+      alignContent: "center",
       zIndex: 4
     },
     // mainContainer: {
@@ -57,7 +58,7 @@ const stylesBody = StyleSheet.create({
       backgroundColor: colors.global.backgroundColor,
       flexDirection: "column", 
       gap: 50,
-      paddingHorizontal: 24
+      paddingHorizontal: 16
       // zIndex: 9
   },
   review: {
@@ -66,11 +67,13 @@ const stylesBody = StyleSheet.create({
     backgroundColor: colors.global.backgroundHeaderFooterColor,
     flexDirection: "column",
     borderRadius: 12,
-    gap: 30
+    gap: 24,
+    height: "auto"
   },
   estrelas: {
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    alignItems: "center"
   },
   title: {
     color: colors.global.text,
@@ -87,14 +90,17 @@ const stylesBody = StyleSheet.create({
   reviewInteractive: {
     flexDirection: "column",
     alignContent: "space-between",
-    gap: 70
+    gap: 70,
+    height: "auto"
   },
   reviewInput: {
     backgroundColor: colors.global.backgroundBackColor,
     borderRadius: 8,
-    paddingTop: 20,
-    paddingBottom: 50,
-    paddingLeft: 28
+    paddingTop: 16,
+    // paddingBottom: 50,
+    paddingHorizontal: 28,
+    minHeight: 144,
+    height: "auto"
   },
   actions: {
     flexDirection: "row",

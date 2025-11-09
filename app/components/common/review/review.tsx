@@ -76,7 +76,7 @@ export default function Review({ review, userIcon }: ReviewModel) {
                         <InteractiveIcon onPress={openModalEditReview} icon={"pencil"} size={20} name={"Editar"} />
                         ) : ( <View/>
                     )}
-                    <View>
+                    <View style={{alignSelf: "flex-start", justifyContent: "flex-start"}}>
                         <InteractiveIcon 
                             onPress={changeLike} 
                             icon={isLiked ? "thumb-up" : "thumb-up-outline"} 

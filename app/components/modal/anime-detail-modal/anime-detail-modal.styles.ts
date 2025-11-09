@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         paddingVertical: 45
     },
     headerActions: {
-        paddingHorizontal: 24,
+        paddingHorizontal: 16,
         // paddingTop: -24
         zIndex: 9,
         flexDirection: "row",
@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
         maxWidth: 70,
     },
     rating: {
-        flexDirection: "row"
+        flexDirection: "row",
+        gap: 4
     },
     ratingText: {
         fontSize: 10,

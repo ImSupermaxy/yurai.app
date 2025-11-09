@@ -1,6 +1,6 @@
 import CardList from "@/components/common/card-list/card-list";
 import TopTitle from "@/components/common/top-title/top-title";
-import { SerachInputCustom } from "@/components/custom/search-input-custom/search-input-custom";
+import { TextInputCustom } from "@/components/custom/text-input-custom/text-input-custom";
 import { useSettingsState } from "@/context/settings-provider";
 import scree_styles from "@/screens/screen-default.styles";
 import { AnimeStorageModel } from "@/service/animes.service";
@@ -64,7 +64,7 @@ export default function Buscar() {
     return (
       <View style={scree_styles.mainContainer}>
         <View style={[styles.container]}>
-            <SerachInputCustom placeholder={"Buscar..."} value={search ?? ''} onChangeText={onChangeSearch} />
+            <TextInputCustom placeholder={"Buscar..."} value={search ?? ''} onChangeText={onChangeSearch} />
             
             <View style={styles.content}>
               <TopTitle fontSize={20} title={title} width={300} padding={16} />

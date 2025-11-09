@@ -9,9 +9,10 @@ interface InteractiveIconModel {
     align?: "row" | "column"
     size?: number,
     color?: string
+    fontSize?: number
 }
 
-export default function InteractiveIcon({ onPress, icon, name = null, align = "row", size = 24, color = colors.global.icon, ...rest }: InteractiveIconModel & TouchableOpacityProps) {
+export default function InteractiveIcon({ onPress, icon, name = null, align = "row", size = 24, color = colors.global.icon, fontSize = 10, ...rest }: InteractiveIconModel & TouchableOpacityProps) {
     return (
         <TouchableOpacity 
             onPress={onPress}
@@ -19,7 +20,7 @@ export default function InteractiveIcon({ onPress, icon, name = null, align = "r
             {...rest} 
         >
             <MaterialCommunityIcons name={icon} size={size} color={color} />
-            <Text style={{ fontSize: 10, color: colors.global.text }}>{name}</Text>
+            {name && (<Text style={{ fontSize: fontSize, color: color }}>{name}</Text>)} 
         </TouchableOpacity>
     );
 }

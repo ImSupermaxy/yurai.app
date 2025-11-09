@@ -4,6 +4,7 @@ import { ImageBackground, ScrollView, StyleSheet, Text, View } from "react-nativ
 // import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Estrelas from "@/components/common/estrelas/estrelas";
 import ReviewList from "@/components/common/review-list/review-list";
+import SeeMoreText from "@/components/common/see-more-text/see-more-text";
 import ButtonCustom from "@/components/custom/button-custom/button-custom";
 import { colors } from "@/constants/colors";
 import { AnimeSelection, useSettingsState } from "@/context/settings-provider";
@@ -37,13 +38,12 @@ export default function AnimeDetailModal({ isVisible, onCloseModal, animeSelecte
   
   useFocusEffect(
     useCallback(() => {
-      setReviewsFiltred(reviews.filter(r => r.animeId == anime?.id && !r.isUserReview));
-      setReviewsUserFiltred(reviews.filter(r => r.animeId == anime?.id && r.isUserReview));
+      changeReviewsFiltred();
 
       if (!!isVisible)
         setIsFavorito(anime === null ? false : anime!.isFavorito!);
 
-    }, [isVisible])
+    }, [isVisible, animes])
   );
 
   const headerStyle = StyleSheet.create({
@@ -60,17 +60,22 @@ export default function AnimeDetailModal({ isVisible, onCloseModal, animeSelecte
       }
   });
 
+  function changeReviewsFiltred() {
+    setReviewsFiltred(reviews.filter(r => r.animeId == anime?.id && !r.isUserReview));
+    setReviewsUserFiltred(reviews.filter(r => r.animeId == anime?.id && r.isUserReview));
+  }
+
   function openNovaReviewModal() {
     setOpenNovaReview(!openNovaReview);
     // if (!openNovaReview == true)
     //   onCloseModal();
 
     // setAnimeSelected(animeSelected);
-    console.log(animeSelected?.anime);
   }
 
   function closeReviewModal() {
     setOpenNovaReview(false);
+    changeReviewsFiltred();
   }
 
   function changeFavorito() {
@@ -85,13 +90,13 @@ export default function AnimeDetailModal({ isVisible, onCloseModal, animeSelecte
     <View>
       <Modal
         isVisible={isVisible}
-        animationIn="slideInUp"
-        animationOut="slideOutDown"
+        animationIn="fadeInUp"
+        animationOut="fadeOutDown"
         style={{ height: "auto", width: "100%", padding: 0, margin: 0 }}
         onBackdropPress={onCloseModal}
       >
         <View style={styles.container}>
-          <ScrollView>
+          <ScrollView keyboardShouldPersistTaps="handled">
             <View style={headerStyle.container}>
               <View>
               {/* BEGGIN:: HEADER */}
@@ -121,7 +126,7 @@ export default function AnimeDetailModal({ isVisible, onCloseModal, animeSelecte
               {/* BEGGIN:: BODY */}
                 <View style={{ display: "flex", flexDirection: "column", gap: 32 }}>
                   <View style={styles.detalhes}>
-                    <View style={{ minWidth: 144, maxWidth: 144, flexDirection: "column", gap: 4 }}>
+                    <View style={{ minWidth: 154, maxWidth: 154, flexDirection: "column", gap: 4 }}>
                       <Text style={styles.title}>{ anime?.name }</Text>
                       <Text style={styles.text}>{ anime?.periodoLancamento } {anime?.anoLancamento}</Text>
                       <Text style={styles.text}>{ anime?.tipoExibicao }</Text>
@@ -129,7 +134,7 @@ export default function AnimeDetailModal({ isVisible, onCloseModal, animeSelecte
                     <View style={styles.rightSide}>
                       <View style={styles.rating}>
                         <Estrelas quantidade={anime?.qtdEstrelas ?? 0.5 } exibirVazia={true} />
-                        <View style={{width: "100%", flexDirection: "row", justifyContent: "space-between", alignItems: "center"}}>
+                        <View style={{width: "100%", flexDirection: "row", justifyContent: "flex-start", gap: 4, alignItems: "center"}}>
                           <Text style={{fontSize: 16, color: colors.global.text }}>{"|"}</Text>
                           <Text style={styles.ratingText}>{anime?.review} {"(" + millify(anime?.qtdReviews ?? 0) + ")"}</Text>
                         </View>
@@ -160,9 +165,7 @@ export default function AnimeDetailModal({ isVisible, onCloseModal, animeSelecte
                     </View>
                   </View>
                   <View style={{ maxHeight: 300 }}>{/* +37 com o "mostrar mais" */}
-                    <Text style={styles.text}>{anime?.descricao}</Text>
-    
-                    {/* ADICIONAR O MOSTRAR MAIS... */}
+                    <SeeMoreText numberOfLines={6} text={anime?.descricao ?? ""} style={styles.text} />
                   </View>
                 </View>
     
@@ -179,7 +182,7 @@ export default function AnimeDetailModal({ isVisible, onCloseModal, animeSelecte
           </ScrollView>
         </View>     
         
-        <ReviewEditModal isVisible={openNovaReview} onCloseModal={closeReviewModal} />
+        {openNovaReview && (<ReviewEditModal isVisible={openNovaReview} onCloseModal={closeReviewModal} />)}
       </Modal>
     </View>
   );

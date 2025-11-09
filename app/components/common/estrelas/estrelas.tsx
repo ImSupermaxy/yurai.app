@@ -1,6 +1,6 @@
 import { colors } from "@/constants/colors";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { View } from "react-native";
+import InteractiveIcon from "../interactive-icon/interactive-icon";
 import style from "./estrelas.style";
 
 interface EstrelasModel {
@@ -8,31 +8,49 @@ interface EstrelasModel {
     quantidade: number
     exibirVazia?: boolean,
     color?: string,
-    // onChange: () => void
+    colorVazia?: string,
+    setQtdEstrelas?: React.Dispatch<React.SetStateAction<number>> | null;
 }
 
-export default function Estrelas({ quantidade, size = 24, color = colors.global.icon, exibirVazia = false }: EstrelasModel) {
+export default function Estrelas({ quantidade, size = 24, color = colors.global.icon, colorVazia = colors.global.icon, exibirVazia = false, setQtdEstrelas = null }: EstrelasModel) {
     const maxStars = 5;
     const stars = [];
+    const isChangeQtdEstrela = setQtdEstrelas !== null
+
+    function changeQtdEstrela(idx: number) {
+      if (!isChangeQtdEstrela)
+        return;
+
+      if (idx > quantidade)
+        AddEstrela((idx - quantidade));
+      else
+        RemoveEstrela((quantidade - idx) + 1);
+    }
+
+    function AddEstrela(valor: number) {
+      setQtdEstrelas!(quantidade + valor);
+    }
+
+    function RemoveEstrela(valor: number) {
+      setQtdEstrelas!(quantidade - valor);
+    }
     
     for (let i = 1; i <= maxStars; i++) {
-      if (quantidade >= i) {
-        // estrela cheia
-        stars.push(
-          <MaterialCommunityIcons key={i} name="star" size={size} color={color} />
-        );
-      } else if (quantidade + 0.5 >= i) {
-        // meia estrela
-        stars.push(
-          <MaterialCommunityIcons key={i} name="star-half-full" size={size} color={color} />
-        );
-      } else {
-        // estrela vazia
-        if (exibirVazia)
-            stars.push(
-                <MaterialCommunityIcons key={i} name="star-outline" size={size} color={color} />
-            );
-      }
+      const iconVazia = "star-outline";
+      const iconMeiaEstrela = "star-half-full";
+      const iconEstrelaPreenchida = "star";
+      const icon = quantidade >= i ? iconEstrelaPreenchida : quantidade + 0.5 >= i ? iconMeiaEstrela : iconVazia;
+
+      stars.push(
+        <InteractiveIcon 
+          key={i} 
+          icon={icon} 
+          size={size} 
+          color={icon == iconVazia ? colorVazia : color}
+          activeOpacity={isChangeQtdEstrela ? 0.7 : 1}
+          onPress={() => changeQtdEstrela(i) }
+        />
+      );
     }
 
     return (

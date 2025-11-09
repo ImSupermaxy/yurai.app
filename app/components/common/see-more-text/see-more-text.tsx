@@ -9,6 +9,7 @@ interface SeeMoreText {
     style?: any | null
 }
 
+const mediaPalavrasPorLinha = 9;
 
 export default function SeeMoreText ({ text = "", numberOfLines = 3, style = null }: SeeMoreText) {
   const [expanded, setExpanded] = useState(false);
@@ -21,10 +22,8 @@ export default function SeeMoreText ({ text = "", numberOfLines = 3, style = nul
       >
         {text}
       </Text>
-
-      {/* Só mostra o botão "Ver mais" se o texto for longo */}
       {
-        text.length > 100 ? (
+        (text.split(' ').length / 9) > numberOfLines ? (
         <ButtonCustom 
           style={{ alignSelf: "flex-end" }}
           title={expanded ? "Mostrar menos" : "Mostrar mais"} 

@@ -2,7 +2,7 @@ import reviewsTeste from "@/assets/data/reviews/reviews-teste.json";
 import reviews from "@/assets/data/reviews/reviews.json";
 import { BaseResourceService } from "../../shared/base-resource.service";
 
-export type tipoShowReview = "onlyYou" | "onlyFriends" | "toAll";
+export type TipoShowReview = "onlyYou" | "onlyFriends" | "toAll";
 
 export interface ReviewStorageModel {
     id: number
@@ -18,7 +18,7 @@ export interface ReviewStorageModel {
     userDisliked: boolean
     animeId: number
     isSpoiler: boolean
-    showReview: tipoShowReview
+    showReview: TipoShowReview
 }
 
 class ReviewService extends BaseResourceService<ReviewStorageModel> {
@@ -29,7 +29,6 @@ class ReviewService extends BaseResourceService<ReviewStorageModel> {
 
         super("review", storage);
     }
-    
 }
 
 const service = new ReviewService();
