@@ -1,7 +1,10 @@
-import reviewsTeste from "@/assets/data/reviews/reviews-teste.json"
-import { BaseResourceService } from "../../shared/base-resource.service"
+import reviewsTeste from "@/assets/data/reviews/reviews-teste.json";
+import reviews from "@/assets/data/reviews/reviews.json";
+import { BaseResourceService } from "../../shared/base-resource.service";
 
-export type ReviewStorageModel = {
+export type tipoShowReview = "onlyYou" | "onlyFriends" | "toAll";
+
+export interface ReviewStorageModel {
     id: number
     nomeUser: string
     arrobaUser: string
@@ -14,15 +17,17 @@ export type ReviewStorageModel = {
     userLiked: boolean
     userDisliked: boolean
     animeId: number
+    isSpoiler: boolean
+    showReview: tipoShowReview
 }
 
 class ReviewService extends BaseResourceService<ReviewStorageModel> {
 
     constructor () {
         const testeJSON = reviewsTeste as ReviewStorageModel[];
-        // const storage: ReviewStorageModel[] = reviews as ReviewStorageModel[];
+        const storage: ReviewStorageModel[] = reviews as ReviewStorageModel[];
 
-        super("review", testeJSON);
+        super("review", storage);
     }
     
 }

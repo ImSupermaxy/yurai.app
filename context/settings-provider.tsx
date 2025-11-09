@@ -6,10 +6,17 @@ import React, { createContext, PropsWithChildren, useContext, useEffect, useMemo
 interface SettingsContextProps {
   animes: AnimeStorageModel[];
   reviews: ReviewStorageModel[];
-  animeSelected: AnimeStorageModel | null;
+  animeSelected: AnimeSelection | null;
   setAnimes: React.Dispatch<React.SetStateAction<AnimeStorageModel[]>>;
   setReviews: React.Dispatch<React.SetStateAction<ReviewStorageModel[]>>;
-  setAnimeSelected: React.Dispatch<React.SetStateAction<AnimeStorageModel | null>>;
+  setAnimeSelected: React.Dispatch<React.SetStateAction<AnimeSelection | null>>;
+}
+
+export type ModalsToOpenModel = "details" | "editReview" | "addReview" 
+
+export interface AnimeSelection {
+  anime: AnimeStorageModel
+  modalToOpen: ModalsToOpenModel
 }
 
 const SettingsContext = createContext<SettingsContextProps | undefined>(undefined);
@@ -21,7 +28,7 @@ export const useSettingsState = () => {
 
 export function SettingsProvider({ children }: PropsWithChildren) {
   const [animes, setAnimes] = useState(([] as AnimeStorageModel[]));
-  const [animeSelected, setAnimeSelected] = useState<AnimeStorageModel | null>(null);
+  const [animeSelected, setAnimeSelected] = useState<AnimeSelection | null>(null);
   const [reviews, setReviews] = useState(([] as ReviewStorageModel[]));
 
   useEffect(() => {

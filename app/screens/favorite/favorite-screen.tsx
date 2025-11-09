@@ -1,5 +1,7 @@
 import CardList from "@/components/common/card-list/card-list";
 import TopTitle from "@/components/common/top-title/top-title";
+import AnimeDetailModal from "@/components/modal/anime-detail-modal/anime-detail-modal";
+import ReviewEditModal from "@/components/modal/review-edit-modal/review-edit-modal";
 import { colors } from "@/constants/colors";
 import { useSettingsState } from "@/context/settings-provider";
 import { AnimeStorageModel } from "@/storage/anime-storage";
@@ -23,29 +25,42 @@ export default function FavoriteScreen() {
 
   const [animesFiltred, setAnimesFiltred] = useState<AnimeStorageModel[] | []>(animes.filter(a => a.isFavorito) ?? []);
   const [ordenation, setOrdenation] = useState<Ordenation>("ascending");
+  const [hasAnimeSelected, setHasAnimeSelected] = useState(false);
+  const [openAnimeDetailModal, setOpenAnimeDetailModal] = useState(false);
+  const [openReviewEditModal, setOpenReviewEditModal] = useState(false);
 
-  function changeVisibiltyAnimeDetailModal() {
-    // setOpenAnimeDetailModal(!openAnimeDetailModal);
-    setAnimeSelected(null);
-  }
-
-  function changeVisibiltyReviewEditModal() {
-    // setOpenReviewEditModal(!openReviewEditModal);
-    setAnimeSelected(null);
-  }
-
-  function changeVisibiltyReviewAddModal() {
-    // setOpenReviewAddModal(!openReviewAddModal);
-    setAnimeSelected(null);
+  function changeVisibiltyModals() {
+    if (animeSelected != null)
+    {
+      if (animeSelected?.modalToOpen === "details")
+        setOpenAnimeDetailModal(!openAnimeDetailModal);
+      else
+        setOpenReviewEditModal(!openReviewEditModal);
+    }
+    else
+    {
+      setOpenAnimeDetailModal(false);
+      setOpenReviewEditModal(false);
+    }
   }
 
   function getUserReview() {
-    return reviews.filter(r => r.animeId == animeSelected!.id && r.isUserReview)[0];
+    if (animeSelected !== null)
+      return reviews.filter(r => r.animeId == animeSelected!.anime.id && r.isUserReview).findLast(r => r.animeId);
+
+    return undefined;
   }
   
   useEffect(() => {
-    changeAnimesFiltred();
-  }, [ordenation, animes]);
+    if (isFocused)
+      changeAnimesFiltred();
+  }, [isFocused, ordenation, animes]);
+
+    useEffect(() => {
+    if (isFocused)
+      changeVisibiltyModals();
+
+  }, [isFocused, animeSelected]);
   
   useFocusEffect(
     useCallback(() => {
@@ -53,15 +68,6 @@ export default function FavoriteScreen() {
     }, [])
   );
 
-  useEffect(() => {
-    // if (isFocused)
-    // {
-    //   setOpenAnimeDetailModal(false);
-    //   setOpenReviewEditModal(false);
-    //   setOpenReviewAddModal(false);
-    // }
-
-  }, [isFocused, animeSelected]); // , openAnimeDetailModal, openReviewEditModal, setOpenReviewAddModal
 
   function changeAnimesFiltred() {
     let ordenado: AnimeStorageModel[] = [];
@@ -73,11 +79,21 @@ export default function FavoriteScreen() {
     }
     
     setAnimesFiltred(ordenado);
+    // console.log(ordenado.map(o => { return { id: o.id, favorito: o.isFavorito }; }));
   }
 
-  function onChangeOrdenation(ordenation: Ordenation) {//event: TextInputSubmitEditingEvent
-    setOrdenation(ordenation);
+  function onChangeOrdenation(newOrdernation: Ordenation) {//event: TextInputSubmitEditingEvent
+    setOrdenation(newOrdernation);
     changeAnimesFiltred();
+  }
+
+  function changeOrdanation() {
+    if (ordenation == "ascending") {
+      onChangeOrdenation("descending");
+    }
+    else if (ordenation == "descending") {
+      onChangeOrdenation("ascending");
+    }
   }
   
   return (
@@ -89,7 +105,15 @@ export default function FavoriteScreen() {
         <View style={screen_styles.mainContainer}>
           <View style={[styles.container]}>              
             <View style={styles.content}>
-              <TopTitle fontSize={24} title={"Favoritos"} width={300} padding={16} fontWeight="bold" />
+              <TopTitle 
+                fontSize={24} 
+                title={"Favoritos"} 
+                width={300} 
+                padding={16} 
+                fontWeight="bold" 
+                icon={ordenation == "ascending" ? "filter-variant" : "filter-variant-minus"}  
+                actionIcon={changeOrdanation}
+              />
               <Text style={{ fontSize: 16, color: colors.global.text }}>Seus animes favoritados... </Text>
               <CardList animes={animesFiltred} forma={"detalhado"} horizontal={false} scrollEnabled={false} showActions={true} />
             </View>
@@ -97,9 +121,8 @@ export default function FavoriteScreen() {
         </View>
       </ScrollView>
 
-      {/* <AnimeDetailModal isVisible={openAnimeDetailModal} onCloseModal={() => { changeVisibiltyAnimeDetailModal }} />
-      <ReviewEditModal isVisible={openReviewAddModal} onCloseModal={() => { changeVisibiltyReviewAddModal }} />
-      <ReviewEditModal isVisible={openReviewEditModal} onCloseModal={() => { changeVisibiltyReviewEditModal }} review={getUserReview()} /> */}
+      <AnimeDetailModal isVisible={openAnimeDetailModal} onCloseModal={() => { setAnimeSelected(null) }} animeSelected={animeSelected} />
+      <ReviewEditModal isVisible={openReviewEditModal} onCloseModal={() => { setAnimeSelected(null) }} review={getUserReview()} />
     </View>
   );
 }

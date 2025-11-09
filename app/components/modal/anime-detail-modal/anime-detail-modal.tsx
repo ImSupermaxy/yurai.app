@@ -1,29 +1,32 @@
 import InteractiveIcon from "@/components/common/interactive-icon/interactive-icon";
 import { animeService } from "@/service/animes.service";
-import { ImageBackground, Modal, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ImageBackground, ScrollView, StyleSheet, Text, View } from "react-native";
 // import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Estrelas from "@/components/common/estrelas/estrelas";
 import ReviewList from "@/components/common/review-list/review-list";
 import ButtonCustom from "@/components/custom/button-custom/button-custom";
 import { colors } from "@/constants/colors";
-import { useSettingsState } from "@/context/settings-provider";
+import { AnimeSelection, useSettingsState } from "@/context/settings-provider";
 import { ReviewStorageModel } from "@/service/reviews.service";
 import { LinearGradient } from 'expo-linear-gradient';
 import { useFocusEffect } from "expo-router";
 import { millify } from 'millify';
 import { useCallback, useState } from "react";
+import Modal from 'react-native-modal';
+import { animeDefault } from "../modal-default";
 import ModalDefaultModel from "../modal-default.model";
 import ReviewEditModal from "../review-edit-modal/review-edit-modal";
 import styles from "./anime-detail-modal.styles";
 
 interface AnimeDetailModalModel {
-    // animeId: number,
+    animeSelected: AnimeSelection | null,
     // userReviews: ReviewStorageModel[]
     // reviews: ReviewStorageModel[]
 }
 
-export default function AnimeDetailModal({ isVisible, onCloseModal }: AnimeDetailModalModel & ModalDefaultModel) { 
-  const { reviews, animeSelected: anime, animes, setAnimes } = useSettingsState();
+export default function AnimeDetailModal({ isVisible, onCloseModal, animeSelected }: AnimeDetailModalModel & ModalDefaultModel) { 
+  const { reviews, animes, setAnimes, setAnimeSelected } = useSettingsState();
+  const anime = animeSelected != null ? animeSelected.anime : animeDefault;
   
   const banner = animeService.banners[anime?.bannerImage!];
 
@@ -58,7 +61,12 @@ export default function AnimeDetailModal({ isVisible, onCloseModal }: AnimeDetai
   });
 
   function openNovaReviewModal() {
-    setOpenNovaReview(true);
+    setOpenNovaReview(!openNovaReview);
+    // if (!openNovaReview == true)
+    //   onCloseModal();
+
+    // setAnimeSelected(animeSelected);
+    console.log(animeSelected?.anime);
   }
 
   function closeReviewModal() {
@@ -76,12 +84,11 @@ export default function AnimeDetailModal({ isVisible, onCloseModal }: AnimeDetai
   return (
     <View>
       <Modal
-        visible={isVisible}
-        transparent={true}
-        animationType="fade"
-        style={{ height: "auto" }}
-        
-        onRequestClose={onCloseModal}
+        isVisible={isVisible}
+        animationIn="slideInUp"
+        animationOut="slideOutDown"
+        style={{ height: "auto", width: "100%", padding: 0, margin: 0 }}
+        onBackdropPress={onCloseModal}
       >
         <View style={styles.container}>
           <ScrollView>
@@ -171,9 +178,9 @@ export default function AnimeDetailModal({ isVisible, onCloseModal }: AnimeDetai
             </View>
           </ScrollView>
         </View>     
+        
+        <ReviewEditModal isVisible={openNovaReview} onCloseModal={closeReviewModal} />
       </Modal>
-
-      <ReviewEditModal isVisible={openNovaReview} onCloseModal={closeReviewModal} />
     </View>
   );
 }

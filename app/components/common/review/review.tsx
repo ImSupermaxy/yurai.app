@@ -1,3 +1,4 @@
+import ReviewEditModal from "@/components/modal/review-edit-modal/review-edit-modal";
 import { colors } from "@/constants/colors";
 import { ReviewStorageModel } from "@/service/reviews.service";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -15,13 +16,10 @@ export interface ReviewModel {
     userIcon: keyof typeof MaterialCommunityIcons.glyphMap,
 }
 
-export default function Review({ review, userIcon }: ReviewModel) {
+export default function Review({ review, userIcon }: ReviewModel) {    
     const [isLiked, setIsLiked ] = useState(review.userLiked ?? false);
     const [isDisliked, setisDisliked ] = useState(review.userDisliked ?? false);
-
-    function openModalEditReview() {
-        console.log("Abrindo modal para editar a review....")
-    }
+    const [openNovaReview, setOpenNovaReview] = useState(false);
 
     function changeLike() {
         console.log("Like clicado...");
@@ -35,6 +33,14 @@ export default function Review({ review, userIcon }: ReviewModel) {
 
     function adicionarComentario() {
         console.log("Comentário clicado...")
+    }
+
+    function openModalEditReview() {
+        setOpenNovaReview(!openNovaReview);
+    }
+
+    function closeReviewModal() {
+        setOpenNovaReview(false);
     }
 
     return (
@@ -53,15 +59,15 @@ export default function Review({ review, userIcon }: ReviewModel) {
                                 <MaterialCommunityIcons name={userIcon} size={16} color={colors.global.icon} />
                             </View>
                             <View style={style.userInfo}>
-                                <Text style={style.text}>{"Usuário"}</Text>
-                                <Text style={style.arroba}>{"@arroba"}</Text>
+                                <Text style={style.text}>{review.nomeUser}</Text>
+                                <Text style={style.arroba}>{review.arrobaUser}</Text>
                             </View>
                         </View>
-                        <View>
-                            <Estrelas quantidade={review.qtdEstrelas} exibirVazia={true} />
-                        </View>
+                        {/* <View> */}
+                            <Estrelas quantidade={review.qtdEstrelas} exibirVazia={true} size={20} />
+                        {/* </View> */}
                     </View>
-                    <View>
+                    <View style={style.comentario}>
                         <SeeMoreText text={review.comentario} numberOfLines={4} />
                     </View>
                 </View>
@@ -94,6 +100,8 @@ export default function Review({ review, userIcon }: ReviewModel) {
             
             </View>
             <Divider style={[{ backgroundColor: colors.global.text, width: "100%" }]}/>
+ 
+            <ReviewEditModal isVisible={openNovaReview} onCloseModal={closeReviewModal} review={review} />
         </View>
     );
 }

@@ -4,11 +4,12 @@ import CardCustom from "@/components/custom/card-custom/card-custom";
 import { colors } from "@/constants/colors";
 import { useSettingsState } from "@/context/settings-provider";
 import screen_styles from "@/screens/screen-default.styles";
-import { AnimeStorageModel } from "@/service/animes.service";
 import { ReviewStorageModel } from "@/service/reviews.service";
 import { LinearGradient } from 'expo-linear-gradient';
 import React, { useState } from "react";
-import { Button, Modal, StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
+import Modal from 'react-native-modal';
+import { animeDefault } from "../modal-default";
 import ModalDefaultModel from "../modal-default.model";
 import { styles } from "./review-edit-modal.styles";
 
@@ -17,28 +18,21 @@ interface ReviewModalModel {
     review?: ReviewStorageModel
 }
 
-export default function ReviewEditModal({ isVisible, onCloseModal: changeState, review: undefined }: ReviewModalModel & ModalDefaultModel) {
+export default function ReviewEditModal({ isVisible, onCloseModal, review: undefined }: ReviewModalModel & ModalDefaultModel) {
 
     const { animeSelected } = useSettingsState();
     const [estrelas, setEstrelas] = useState<number>(0);
-
-    const animeDefault: AnimeStorageModel = {
-        id: -1,
-        name: "legal",
-        cardImage: "apothecaryDiariesCard",
-        bannerImage: "apothecaryDiariesBanner"
-    }
 
     const title = "Escreva sua avaliação";
 
     return (
         <Modal
-                style={{ height: "auto" }}
-                visible={isVisible}
-                transparent={true}
-                animationType="slide"
-                onRequestClose={changeState} // Necessário no Android
-            >
+          isVisible={isVisible}
+          animationIn="slideInUp"
+          animationOut="slideOutDown"
+          style={{ height: "auto", width: "100%", paddingVertical: 50, paddingHorizontal: 0, margin: 0 }}
+          onBackdropPress={onCloseModal}
+        >
             <View style={[
                 styles.byPlataform, 
                 styles.styleHeader.container
@@ -48,7 +42,7 @@ export default function ReviewEditModal({ isVisible, onCloseModal: changeState, 
                     style={[stylesGradient.gradient, stylesGradient.topGradient]}
                 />                
                     <View style={[styles.styleHeader.mainContainer]}>
-                        <Button title="Fechar" onPress={changeState} />
+                        <Button title="Fechar" onPress={onCloseModal} />
                         <Text style={{color: colors.global.text}}>Confirmar Review</Text>
                     </View>
                 <LinearGradient
@@ -57,7 +51,7 @@ export default function ReviewEditModal({ isVisible, onCloseModal: changeState, 
                 />
             </View>
             <View style={[screen_styles.mainContainer, styles.stylesBody.container]}>
-                <CardCustom anime={animeSelected ?? animeDefault} forma={"detalhado"} onlyView={true} />
+                <CardCustom anime={animeSelected != null ? animeSelected.anime : animeDefault} forma={"detalhado"} onlyView={true} />
 
                 {/* <Text style={{ color: colors.global.text}}>Refatorar o cardCustom, Separar em dois componentes (um para a forma simples, e a outra para a forma complexa... (utilizar aqui apenas a complexa :)</Text> */}
 
@@ -107,7 +101,7 @@ const stylesGradient = StyleSheet.create({
     position: 'absolute',
     left: 0,
     right: 0,
-    height: 50, // altura do gradiente
+    height: 50,
     zIndex: 2,
   },
   topGradient: {

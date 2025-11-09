@@ -4,6 +4,7 @@ import { StyleSheet } from "react-native";
 const style = StyleSheet.create({
     container: {
         height: "auto",
+        minHeight: 100,
         width: "100%",
         flexDirection: "row",
         gap: 32,
@@ -35,6 +36,9 @@ const style = StyleSheet.create({
         fontSize: 10,
         fontWeight: "regular",
         color: colors.gray[300]
+    },
+    comentario: {
+        minWidth: 240
     },
     actions: {
         display: "flex",

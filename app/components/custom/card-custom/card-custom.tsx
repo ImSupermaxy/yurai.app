@@ -1,6 +1,6 @@
 import Estrelas from "@/components/common/estrelas/estrelas";
 import InteractiveIcon from "@/components/common/interactive-icon/interactive-icon";
-import { useSettingsState } from "@/context/settings-provider";
+import { ModalsToOpenModel, useSettingsState } from "@/context/settings-provider";
 import { animeService, AnimeStorageModel } from "@/service/animes.service";
 import millify from "millify";
 import { useState } from "react";
@@ -26,22 +26,34 @@ export default function CardCustom({
         onlyView = false
     }: CardModel) 
 {
-    const { setAnimeSelected, reviews } = useSettingsState();
+    const { animes, reviews, setAnimes, setAnimeSelected } = useSettingsState();
     const [isFavorito, setIsFavorito] = useState(anime.isFavorito);
     
     const isSimples = forma == "simples";
     const hasUserReview = reviews.filter(r => r.isUserReview && r.animeId === anime.id).length > 0;
 
-    function onChangeAnimeSelected() {
-        setAnimeSelected(anime);
-    }
-
     function changeFavorito() {
         setIsFavorito(!isFavorito);
+        anime!.isFavorito = !isFavorito;
+        const tmpAnimes = animes.filter(a => a.id !== anime?.id);
+        tmpAnimes.push(anime!);
+        setAnimes(tmpAnimes.sort((a, b) => a.id - b.id));
     }
 
     function openEditReviewModal() {
+      onChangeAnimeSelected("editReview")
+    }
 
+    function openAddReviewModal() {
+      onChangeAnimeSelected("addReview")
+    }
+
+    function openAnimeDetailModal() {
+      onChangeAnimeSelected("details")
+    }
+
+    function onChangeAnimeSelected(tipoModal: ModalsToOpenModel) {
+        setAnimeSelected({ anime, modalToOpen: tipoModal });
     }
 
     const name = (anime.name.length > 18 && !onlyView) ? anime.name.substring(0, 16).concat("...") : anime.name;
@@ -49,7 +61,7 @@ export default function CardCustom({
     return (
         <View style={{ paddingVertical: 4 }}>
             {isSimples ? (
-                <TouchableOpacity activeOpacity={!onlyView ? 0.5 : 1} onPress={(!onlyView ? onChangeAnimeSelected : () => {})}>
+                <TouchableOpacity activeOpacity={!onlyView ? 0.5 : 1} onPress={(!onlyView ? openAnimeDetailModal : () => {})}>
                     <Card style={styles.stylesSimples.container}>
                         <Image source={ animeService.cards[anime.cardImage] } style={styles.stylesSimples.image} />
                         <Card.Content style={styles.stylesSimples.content}>
@@ -59,7 +71,7 @@ export default function CardCustom({
                 </TouchableOpacity>
             ) : (
                 <View> 
-                    <TouchableOpacity activeOpacity={!onlyView ? 0.5 : 1} onPress={(!onlyView ? onChangeAnimeSelected : () => {})}>
+                    <TouchableOpacity activeOpacity={!onlyView ? 0.5 : 1} onPress={(!onlyView ? openAnimeDetailModal : () => {})}>
                         <View style={styles.stylesDetalhado.container}>
                             <View style={styles.stylesDetalhado.content}>
                                 {/* <View style={[{ flexDirection: "row", }]}> */}
@@ -83,7 +95,7 @@ export default function CardCustom({
                                 {showActions ? (
                                     <View style={styles.stylesDetalhado.actions}>
                                         <InteractiveIcon 
-                                            onPress={openEditReviewModal} 
+                                            onPress={ !hasUserReview ? openEditReviewModal : openAddReviewModal} 
                                             icon={ !hasUserReview ? "pencil-plus" : "pencil" } 
                                             name={ !hasUserReview ? "adicionar" : "editar" }
                                             align="row" 
