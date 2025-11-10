@@ -1,12 +1,29 @@
+import SwitchAccountModal from "@/components/modal/switch-account-modal/switch-account-modal";
 import { colors } from "@/constants/colors";
 import { ThemeColors } from "@/constants/theme";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import React from "react";
-import { Image, Platform, StyleSheet, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { Image, Platform, StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+
+
 export default function HeaderCustom({}) {
-    return (
+
+  const [openSwitchAccountModal, setOpenSwitchAccountModal] = useState(false);
+
+  function openConfigurationModal() {
+    //Abrir o modal para configuração...
+    console.log("Implementar o modal de configuração...");
+    // setOpenSwitchAccountModal(true);
+  }
+
+  function onCloseSwitchAccountModal() {
+    setOpenSwitchAccountModal(false);
+  }
+
+  return (
+    <View>
       <SafeAreaView edges={['top']}
         style={[byPlataform, styles.container]}>
           <TouchableOpacity onPress={openConfigurationModal}>
@@ -15,19 +32,13 @@ export default function HeaderCustom({}) {
               style={{ width: 32, height: 32, resizeMode: 'contain' }}
             />
           </TouchableOpacity>
-          
+
           <TouchableOpacity onPress={openNotificationsModal}>
             <MaterialCommunityIcons name="bell-badge-outline" size={24} color={colors.global.icon} />
           </TouchableOpacity>
       </SafeAreaView>
-    );
-}
-
-function openConfigurationModal() {
-  //Abrir o modal para configuração...
-  console.log("Implementar o modal de configuração...");
-  return (
-    <></>
+      <SwitchAccountModal isVisible={openSwitchAccountModal} onCloseModal={onCloseSwitchAccountModal} />
+    </View>
   );
 }
 

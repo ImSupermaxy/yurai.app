@@ -28,13 +28,15 @@ export default function HomeScreen() {
   let novidades: AnimeStorageModel[] = [];
   let melhoresAvaliados: AnimeStorageModel[] = [];
   let favoritos: AnimeStorageModel[] = [];
+  let conhecaTambem: AnimeStorageModel[] = [];
 
   if (animes !== undefined)
   {
-    populares = animes!.filter(a => [1, 2, 5, 4].includes(a.id!));
-    novidades = animes!.filter(a => [6, 3, 9, 10, 13, 8].includes(a.id!));
+    populares = animes!.filter(a => [1, 2, 5, 4, 16, 21].includes(a.id!));
+    novidades = animes!.filter(a => [6, 3, 9, 10, 13, 8, 23].includes(a.id!));
     melhoresAvaliados = animes!.filter(a => [8, 11, 7, 12, 14, 9].includes(a.id!));
     favoritos = animes!.filter(a => a.isFavorito === true);
+    conhecaTambem = animes!.filter(a => !novidades.includes(a) && !melhoresAvaliados.includes(a) && !favoritos.includes(a));
   }
   
   const listaTopicos: HomeTopicsModel[] = [
@@ -42,6 +44,7 @@ export default function HomeScreen() {
     { animes: novidades, topico: "Novidades" },
     { animes: melhoresAvaliados, topico: "Melhores avaliados" },
     { animes: favoritos, topico: "Favoritos" },
+    { animes: conhecaTambem, topico: "Conheça Também!" },
   ];
 
   useEffect(() => {

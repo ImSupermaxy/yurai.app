@@ -57,6 +57,7 @@ export const cards: {
     danDaDanCard: ImageSourcePropType,
     sk8InfinityCard: ImageSourcePropType,
     haikyuuCard: ImageSourcePropType,
+    gachiakutaCard: ImageSourcePropType,
 } = {
     card: cardDefault,
     banner: bannerDefault,
@@ -81,7 +82,12 @@ export const cards: {
     danDaDanCard: require("@/assets/images/cards/DanDaDan.jpeg"),
     sk8InfinityCard: require("@/assets/images/cards/Sk8TheInfinity.jpeg"),
     haikyuuCard: require("@/assets/images/cards/Haikyu.jpeg"),
+    gachiakutaCard: require("@/assets/images/cards/Gachiakuta.jpeg"),
 };
+
+const kikisBanner = 1; // getRandomNumber(1, 4);
+const frierenBanner = 1; // getRandomNumber(1, 3);
+const danDaDanBanner = 1; // getRandomNumber(1, 2);
 
 export const banners: {
     card: ImageSourcePropType,
@@ -107,30 +113,45 @@ export const banners: {
     danDaDanBanner: ImageSourcePropType,
     sk8InfinityBanner: ImageSourcePropType,
     haikyuuBanner: ImageSourcePropType,
+    gachiakutaBanner: ImageSourcePropType,
 } = {
     card: cardDefault,
     banner: bannerDefault,
-    fullmetalAlchemistBanner: bannerDefault, //require("@/assets/images/banners/FullmetalAlchemist.jpeg"),
+    fullmetalAlchemistBanner: require("@/assets/images/banners/FullmetalAlchemist.jpeg"),
     fullmetalBrotherhoodBanner: require("@/assets/images/banners/fullmetalAchemistBrotherhood.png"),
     onePieceBanner: require("@/assets/images/banners/OnePiece.jpeg"),
     chainsawManBanner: require("@/assets/images/banners/ChainsawMan.jpeg"),
     bleachBanner: require("@/assets/images/banners/Bleach.jpeg"),
     blackCloverBanner: require("@/assets/images/banners/BlackClover.jpeg"),
     attackOnTitanBanner: require("@/assets/images/banners/AttackOnTitan.jpeg"),
-    narutoBanner: bannerDefault, //require("@/assets/images/banners/Naruto.jpeg"),
-    blueLockBanner: bannerDefault, //require("@/assets/images/banners/BlueLock.jpeg"),
-    deathNoteBanner: bannerDefault, //require("@/assets/images/banners/DeathNote.jpeg"),
-    kikiDeliveryServiceBanner: bannerDefault, //require("@/assets/images/banners/KikiDeliveryService.jpeg"),
+    narutoBanner: require("@/assets/images/banners/Naruto.jpeg"),
+    blueLockBanner: require("@/assets/images/banners/BlueLock.jpeg"),
+    deathNoteBanner: require("@/assets/images/banners/DeathNote.jpeg"),
+    kikiDeliveryServiceBanner: 
+        (kikisBanner == 1 ? require("@/assets/images/banners/KikiDeliveryService1.jpeg") 
+        : kikisBanner == 2 ? require("@/assets/images/banners/KikiDeliveryService2.jpeg") 
+        : kikisBanner == 3 ? require("@/assets/images/banners/KikiDeliveryService3.jpeg")
+        : require("@/assets/images/banners/KikiDeliveryService4.jpeg")),
     tokyoRevengersBanner: require("@/assets/images/banners/TokyoRevengers.jpeg"),
-    linkClickBanner: bannerDefault, //require("@/assets/images/banners/LinkClick.jpeg"),
+    linkClickBanner: require("@/assets/images/banners/LinkClick.jpeg"),
     theSummerHikaruDiedBanner: require("@/assets/images/banners/TheSummerHikaruDied.jpeg"),
     jujutsuKaisenBanner: require("@/assets/images/banners/JujutsuKaisen.jpeg"),
     myHeroAcademiaBanner: require("@/assets/images/banners/BokuNoHeroAcademia.jpeg"),
     apothecaryDiariesBanner: require("@/assets/images/banners/TheApothecaryDiaries.jpeg"),
-    frierenBeyondJourneysEndBanner: bannerDefault, //require("@/assets/images/banners/SousouNoFriere.jpeg"),
-    danDaDanBanner: bannerDefault, //require("@/assets/images/banners/DanDaDan.jpeg"),
+    frierenBeyondJourneysEndBanner: 
+        (frierenBanner == 1 ? require("@/assets/images/banners/SousouNoFriere1.jpeg")
+        : frierenBanner == 2 ? require("@/assets/images/banners/SousouNoFriere2.jpeg")
+        : require("@/assets/images/banners/SousouNoFriere3.jpeg")),
+    danDaDanBanner: 
+        (danDaDanBanner == 1 ? require("@/assets/images/banners/DanDaDan2.jpeg") 
+        :  require("@/assets/images/banners/DanDaDan1.jpeg")),
     sk8InfinityBanner: require("@/assets/images/banners/Sk8TheInfinity.jpeg"),
-    haikyuuBanner: bannerDefault, //require("@/assets/images/banners/Haikyu.jpeg"),
+    haikyuuBanner: require("@/assets/images/banners/Haikyu.jpeg"),
+    gachiakutaBanner: require("@/assets/images/banners/Gachiakuta.jpeg"),
+};
+
+export function getRandomNumber (min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 class AnimeService extends BaseResourceService<AnimeStorageModel> {
