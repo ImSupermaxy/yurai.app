@@ -1,6 +1,6 @@
 import InteractiveIcon from "@/components/common/interactive-icon/interactive-icon";
 import { animeService } from "@/service/animes.service";
-import { ImageBackground, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ImageBackground, Keyboard, ScrollView, StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
 // import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Estrelas from "@/components/common/estrelas/estrelas";
 import ReviewList from "@/components/common/review-list/review-list";
@@ -182,7 +182,7 @@ export default function AnimeDetailModal({ isVisible, onCloseModal, animeSelecte
           </ScrollView>
         </View>     
         
-        {openNovaReview && (<ReviewEditModal isVisible={openNovaReview} onCloseModal={closeReviewModal} />)}
+        {openNovaReview && (<TouchableWithoutFeedback onPress={Keyboard.dismiss}><ReviewEditModal isVisible={openNovaReview} onCloseModal={closeReviewModal} /></TouchableWithoutFeedback>)}
       </Modal>
     </View>
   );

@@ -13,14 +13,14 @@ const mediaPalavrasPorLinha = 9;
 
 export default function SeeMoreText ({ text = "", numberOfLines = 3, style = null }: SeeMoreText) {
   const [expanded, setExpanded] = useState(false);
-
+console.log(text.trim())
   return (
     <View>
       <Text
         style={[style === null ? { fontSize: 12, fontWeight: "regular", color: colors.global.text } : style]}
         numberOfLines={expanded ? undefined : numberOfLines}
       >
-        {text}
+        {text.trim()}
       </Text>
       {
         (text.split(' ').length / 9) > numberOfLines ? (

@@ -28,8 +28,8 @@ const styleHeader = StyleSheet.create({
       backgroundColor: colors.global.backgroundHeaderFooterColor,
       width: "100%",
       height: "auto",
-      paddingTop: 45,
-      paddingBottom: 10
+      paddingTop: 50,
+      paddingBottom: 20
     },
     mainContainer: {
       backgroundColor: theme.backgroundHeaderFooter, 
@@ -52,12 +52,18 @@ const styleHeader = StyleSheet.create({
 });
 
 const stylesBody = StyleSheet.create({
+  mainContainer: {
+      backgroundColor: colors.global.backgroundColor,
+      width: "100%",
+      height: "auto",
+      // paddingVertical: 45
+  },
   container: {
-      height: "100%",
-      width: "auto",
+      height: "auto",
+      width: "100%",
       backgroundColor: colors.global.backgroundColor,
       flexDirection: "column", 
-      gap: 50,
+      gap: 24,
       paddingHorizontal: 16
       // zIndex: 9
   },
