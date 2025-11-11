@@ -13,7 +13,6 @@ const mediaPalavrasPorLinha = 9;
 
 export default function SeeMoreText ({ text = "", numberOfLines = 3, style = null }: SeeMoreText) {
   const [expanded, setExpanded] = useState(false);
-console.log(text.trim())
   return (
     <View>
       <Text
