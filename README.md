@@ -10,6 +10,8 @@ Nosso aplicativo tem como principal funcionalidade ser um app de avaliação de 
 - Lucas Antônio Dias - [@eepymistdev](https://github.com/eepymistdev)
 - Guilherme Machado - [@glrm079](https://github.com/glrm079)
 
+
+
 ## Get started
 
 1. Install dependencies
@@ -26,12 +28,16 @@ Nosso aplicativo tem como principal funcionalidade ser um app de avaliação de 
 
 ---
 
-## 🧰 Dependências utilizadas
 
+
+## 🧰 Dependências utilizadas
+(alterar...)
 - Microsoft.Extensions.Logging
 - System.Net.Mail (envio de e-mail SMTP)
 - Microsoft.Extensions.Options (para configuração de SMTP)
 - Newtonsoft.Json (serialização de payload, se necessário)
+
+
 
 ## 🗂️ Estrutura do Projeto 
 ```
@@ -78,11 +84,13 @@ Nosso aplicativo tem como principal funcionalidade ser um app de avaliação de 
 └── tsconfig.json
 ```
 
-## Protóripo do App
-Link do protótipo no Figma: [protótipo](https://www.figma.com/design/AuBe8ZgTH4HmqRDC9bdOAX/Yurai-App?node-id=317-2782&t=FJ4kWHjiqw5BiO1H-1)
+
+## Prototype (Protótipo do App)
+Link of prototype in Figma: [protótipo](https://www.figma.com/design/AuBe8ZgTH4HmqRDC9bdOAX/Yurai-App?node-id=317-2782&t=FJ4kWHjiqw5BiO1H-1)
 
 
-## Agradecimentos
 
+## Acknowledgement (Agradecimentos)
 .... (adicionar parte de agradecimentos a professora e a equipe do projeto)
+.... (add this section as acknowledgement to teacher and squad to enjoy the project)
 
