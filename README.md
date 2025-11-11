@@ -26,10 +26,6 @@ Nosso aplicativo tem como principal funcionalidade ser um app de avaliação de 
    npx expo start
    ```
 
----
-
-
-
 ## 🧰 Dependências utilizadas
 (alterar...)
 - Microsoft.Extensions.Logging
@@ -37,6 +33,7 @@ Nosso aplicativo tem como principal funcionalidade ser um app de avaliação de 
 - Microsoft.Extensions.Options (para configuração de SMTP)
 - Newtonsoft.Json (serialização de payload, se necessário)
 
+---
 
 
 ## 🗂️ Estrutura do Projeto 
@@ -84,10 +81,12 @@ Nosso aplicativo tem como principal funcionalidade ser um app de avaliação de 
 └── tsconfig.json
 ```
 
+---
+
+
 
 ## Prototype (Protótipo do App)
 Link of prototype in Figma: [protótipo](https://www.figma.com/design/AuBe8ZgTH4HmqRDC9bdOAX/Yurai-App?node-id=317-2782&t=FJ4kWHjiqw5BiO1H-1)
-
 
 
 ## Acknowledgement (Agradecimentos)
