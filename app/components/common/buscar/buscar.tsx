@@ -73,8 +73,8 @@ export default function Buscar() {
                 <CardList animes={animesFiltred} forma={"detalhado"} horizontal={false} applyPaddingBottom={true} showActions={false} />
               ) : (
                 <View style={styles.notFound}>
-                    <Text style={styles.text}>{"Desculpe, mas não conseguimos encontrar nenhum resultado"}</Text>
-                    <Text style={styles.text}>{":("}</Text>
+                  <Text style={styles.text}>{"Desculpe, mas não conseguimos encontrar nenhum resultado"}</Text>
+                  <Text style={styles.text}>{":("}</Text>
                 </View>
               )}
             </View>

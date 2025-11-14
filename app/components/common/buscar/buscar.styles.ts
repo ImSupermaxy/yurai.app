@@ -14,16 +14,21 @@ const styles = StyleSheet.create({
         gap: 15,
     },
     notFound: {
-        width: "100%",
+        width: 296,
+        paddingVertical: 50,
         height: "auto",
         display: "flex",
+        textAlign: "center",
         flexDirection: "column",
         justifyContent: "center",
         alignContent: "center",
-        gap: 95,
+        alignItems: "center",
+        gap: 24,
     },
     text: {
-        color: colors.global.text
+        color: colors.global.text,
+        textAlign: "center",
+        fontSize: 16
     }
 });
 
