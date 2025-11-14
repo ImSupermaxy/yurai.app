@@ -138,7 +138,7 @@ export default function ReviewEditModal({ isVisible, onCloseModal, review = unde
 
         setHasChaged((changedEstrela || chagedComentario || chagendIsSpoiler || chagedShowReview));
 
-    }, [estrelas, comentario, isSpoiler, showReview]);
+    }, [isVisible, estrelas, comentario, isSpoiler, showReview]);
 
     return (
         <Modal
