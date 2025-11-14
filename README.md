@@ -27,11 +27,9 @@ Nosso aplicativo tem como principal funcionalidade ser um app de avaliação de 
    ```
 
 ## 🧰 Dependências utilizadas
-(alterar...)
-- Microsoft.Extensions.Logging
-- System.Net.Mail (envio de e-mail SMTP)
-- Microsoft.Extensions.Options (para configuração de SMTP)
-- Newtonsoft.Json (serialização de payload, se necessário)
+
+- millify
+- react-native-async-storage
 
 ---
 
