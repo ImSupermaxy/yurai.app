@@ -89,8 +89,8 @@ Link of prototype in Figma: [protótipo](https://www.figma.com/design/AuBe8ZgTH4
 
 ## Acknowledgement (Agradecimentos)
 - Agradeçemos a professora pela ótima didática, e apoio durante o projeto
-- Acknowledgement the teacher to mentor us in process of the App development
+  ```Acknowledgement the teacher to mentor us in process of the App development```
 
 - E agradeçemos aos integrantes do grupo pela parceria
-- And acknowledgement the squad to enjoy the project
+  ```And acknowledgement the squad to enjoy the project```
 
