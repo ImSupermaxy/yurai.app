@@ -1,4 +1,4 @@
-import { DarkTheme, DefaultTheme, Theme, ThemeProvider } from '@react-navigation/native';
+import { DarkTheme, Theme, ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
@@ -6,20 +6,17 @@ import { StyleSheet } from 'react-native';
 // import LinearGradient from 'react-native-linear-gradient';
 import 'react-native-reanimated';
 
-import { useColorScheme } from '../hooks/use-color-scheme';
 import { colors } from './constants/colors';
 
 export const unstable_settings = {
   anchor: '(tabs)',
 };
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  
+export default function RootLayout() {  
   //Criar um theme default para o projeto (customizado...)
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? CustomTheme : DefaultTheme}>
+    <ThemeProvider value={CustomTheme}>
       <Stack>
         {/* <LinearGradient
           colors={['#4c669f', '#3b5998', '#192f6a']}
