@@ -27,11 +27,9 @@ Nosso aplicativo tem como principal funcionalidade ser um app de avaliação de 
    ```
 
 ## 🧰 Dependências utilizadas
-(alterar...)
-- Microsoft.Extensions.Logging
-- System.Net.Mail (envio de e-mail SMTP)
-- Microsoft.Extensions.Options (para configuração de SMTP)
-- Newtonsoft.Json (serialização de payload, se necessário)
+
+- millify
+- react-native-async-storage
 
 ---
 
@@ -90,6 +88,9 @@ Link of prototype in Figma: [protótipo](https://www.figma.com/design/AuBe8ZgTH4
 
 
 ## Acknowledgement (Agradecimentos)
-.... (adicionar parte de agradecimentos a professora e a equipe do projeto)
-.... (add this section as acknowledgement to teacher and squad to enjoy the project)
+- Agradeçemos a professora pela ótima didática, e apoio durante o projeto
+  ```Acknowledgement the teacher to mentor us in process of the App development```
+
+- E agradeçemos aos integrantes do grupo pela parceria
+  ```And acknowledgement the squad to enjoy the project```
 
